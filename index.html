@@ -1,0 +1,1199 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kembara Akidah & Rukun Iman (Tahun 1 - JAKIM)</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="color-scheme" content="only light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap">
+<style>
+/* Susun atur: bar fasa Kolb melekat di atas; setiap fasa satu panel; makmal kanvas di tengah. Warna fasa ikut kitaran Kolb. */
+:root{
+  color-scheme: only light;
+  --paper:#F4F6F1; --card:#FFFFFF; --ink:#1B2430; --muted:#5B6675; --line:#D9DED3; --soft:#ECEFE7;
+  --ce:#D9480F; --ce-soft:#FFE8DC; --ro:#6741D9; --ro-soft:#ECE5FF; --ac:#1864AB; --ac-soft:#E1EEFB; --ae:#2B8A3E; --ae-soft:#E3F4E6;
+  --ar:#0B7285; --ai:#C2255C; --ps:#B35C00;
+  --ok:#2B8A3E; --bad:#C92A2A;
+  --f-d:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif; --f-b:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{background:var(--paper);color:var(--ink);overflow-x:hidden}
+body{margin:0;font-family:var(--f-b);font-size:16.5px;line-height:1.55;padding-left:max(14px,env(safe-area-inset-left,0px));padding-right:max(14px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--card)}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-d);margin:0;line-height:1.15;text-wrap:balance}
+h1{font-size:clamp(26px,5vw,40px);font-weight:800} h2{font-size:clamp(22px,3.4vw,28px);font-weight:800} h3{font-size:18px;font-weight:600}
+p{margin:0} .muted{color:var(--muted)}
+button{font:inherit;cursor:pointer;touch-action:manipulation;min-height:44px}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--card);border-bottom:1px solid var(--line);margin-inline:calc(-1*max(14px,env(safe-area-inset-left,0px)));padding:8px max(14px,env(safe-area-inset-right,0px)) 8px max(14px,env(safe-area-inset-left,0px))}
+.top .wrap{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.brand{font-family:var(--f-d);font-weight:800;margin-right:auto}
+.ph{display:flex;gap:6px;flex-wrap:wrap}
+.phb{border:2px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px 4px 6px;display:flex;gap:6px;align-items:center;font-size:14px;font-weight:700;color:var(--ink);min-height:40px}
+.phb .n{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:12.5px}
+.phb[data-p="0"] .n{background:var(--ce)}.phb[data-p="1"] .n{background:var(--ro)}.phb[data-p="2"] .n{background:var(--ac)}.phb[data-p="3"] .n{background:var(--ae)}
+.phb[aria-current="true"]{border-color:var(--ink)}
+.phb.done::after{content:"✓";color:var(--ok);font-weight:800}
+@media (max-width:560px){.brand{display:none}.phb{padding:3px 9px 3px 5px;font-size:13px}.phb .n{width:19px;height:19px}}
+.stars{font-weight:800;color:var(--ps);font-variant-numeric:tabular-nums;padding:4px 6px}
+
+main{padding-block:20px 40px;display:flex;flex-direction:column;gap:18px}
+.hero{display:flex;flex-direction:column;gap:6px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:14px;border-top:6px solid var(--c,var(--ink))}
+.panel[data-p="0"]{--c:var(--ce);--cs:var(--ce-soft)}.panel[data-p="1"]{--c:var(--ro);--cs:var(--ro-soft)}.panel[data-p="2"]{--c:var(--ac);--cs:var(--ac-soft)}.panel[data-p="3"]{--c:var(--ae);--cs:var(--ae-soft)}
+.eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
+.guide{display:flex;gap:12px;align-items:flex-start;background:var(--cs,var(--soft));border-radius:14px;padding:12px 14px}
+.guide .av{flex:none;width:46px;height:46px;border-radius:50%;background:var(--c,var(--ink));color:#fff;display:grid;place-items:center;font-family:var(--f-d);font-weight:800;font-size:16px}
+.guide p{font-size:16px}
+.guide b.who{display:block;font-size:13px;color:var(--muted);font-weight:700}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{border:0;border-radius:12px;padding:10px 18px;font-weight:700;background:var(--c,var(--ink));color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.btn.ghost{background:var(--card);color:var(--ink);border:1.5px solid var(--line)}
+.btn.sm{padding:8px 14px;font-size:14.5px;min-height:42px}
+.btn.big{font-size:17.5px;padding:14px 20px;border-radius:16px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+
+.fb{border-radius:10px;padding:10px 12px;font-size:15.5px}
+.fb.ok{background:#E3F4E6;color:var(--ok)}.fb.bad{background:#FFE3E3;color:var(--bad)}.fb.info{background:var(--soft)}
+
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:14.5px;font-variant-numeric:tabular-nums}
+th,td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left}
+th{font-family:var(--f-d);font-size:13.5px;background:var(--soft)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0;background:#fff}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.opt{border:2px solid var(--line);background:#fff;border-radius:10px;padding:10px 14px;color:var(--ink);text-align:left;min-height:46px}
+.opt.right{border-color:var(--ok);background:#E3F4E6}.opt.wrong{border-color:var(--bad);background:#FFE3E3}
+textarea,select,input[type=text]{font:inherit;width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;background:#fff;color:var(--ink);min-height:44px}
+textarea{min-height:74px;resize:vertical}
+.level{display:inline-flex;gap:3px;align-items:center;font-weight:700;font-size:14px;color:var(--ai)}
+.level i{width:10px;height:10px;border-radius:3px;background:var(--line)}.level i.on{background:var(--ai)}
+.sliders{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.chal{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}
+.chal button{text-align:left;border:2px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;color:var(--ink);display:flex;flex-direction:column;gap:2px}
+.chal button[aria-pressed="true"]{border-color:var(--ae);background:var(--ae-soft)}
+.chal button small{color:var(--muted);font-size:13.5px}
+.chal button.done{border-color:var(--ok)}
+.chal button.done b::after{content:" ✓";color:var(--ok)}
+.evidence{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.evidence div{border-radius:12px;background:var(--soft);padding:10px;text-align:center}
+.evidence b{display:block;font-family:var(--f-d);font-size:26px}
+.mic{border:2px solid var(--ai);color:var(--ai);background:#fff;border-radius:999px;padding:8px 16px;font-weight:700;min-height:44px}
+.mic.on{background:var(--ai);color:#fff}
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:12px;font-weight:700;opacity:0;transition:all .3s;z-index:50;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* Gaya Sokongan Dialog & AI Adaptif */
+.sd{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:1px 7px;margin-right:4px;color:#fff;vertical-align:2px}
+.sd-pencetus{background:#D9480F}.sd-peringatan{background:#6741D9}.sd-cadangan{background:#1864AB}.sd-pujian{background:#2B8A3E}.sd-ganjaran{background:#B35C00}
+#badges{cursor:pointer}.mode2{display:flex;gap:10px;flex-wrap:wrap;width:100%}.mode2 .btn{flex:1 1 240px}
+.sd-ai{background:#E5F3F6;color:#0B7285;border-color:#0B7285}
+.aia{border:2px solid #0B7285;background:#F1F9FA;border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.aiah{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.aiah b{font-size:17px}.aiaarr{font-size:15.5px}
+.aiamin{margin-left:auto;border:1.5px solid #0B7285;background:#fff;color:#0B7285;border-radius:999px;padding:4px 12px;font:inherit;font-weight:700;font-size:14px;cursor:pointer;min-height:36px}
+.aia.mini{padding:8px 12px}
+.fzt{border-collapse:collapse;width:100%;min-width:0;table-layout:fixed;font-size:15px;margin:6px 0}
+.fzt td,.fzt th{overflow-wrap:anywhere;border-bottom:1px solid var(--line);padding:4px 6px;text-align:left}
+.qhint{border:1.5px dashed #E67700;background:#FFF9DB;color:#7a4b00;border-radius:999px;padding:8px 14px;font:inherit;font-weight:700;cursor:pointer;min-height:42px}
+.qaras{display:inline-block;border-radius:999px;padding:1px 10px;font-weight:800;font-size:13px;margin-left:6px}
+.qaras.a1{background:#D3F9D8;color:#2B8A3E}.qaras.a2{background:#FFF3BF;color:#8a6100}.qaras.a3{background:#FFE3E3;color:#C92A2A}
+.aian{margin:0;font-size:15.5px}.aia details{font-size:15px}.aia summary{cursor:pointer;font-weight:700;color:#0B7285}.aia ul,.aia ol{margin:4px 0 8px;padding-left:20px}.aia details p{margin:6px 0 2px}
+.remed{border:2px dashed #C92A2A;background:#FFF5F5;border-radius:14px;padding:12px 14px;margin-top:10px}
+.mpanel{display:flex!important;flex-direction:column;gap:8px}
+.mcur{border:2.5px solid var(--ce);background:var(--ce-soft);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.mcur.isdone,.mcur.all{border-color:var(--ok);background:#E3F4E6}
+.mlab{font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mcur .mt{font-size:17.5px}.mcur p{margin:0;font-size:15px}
+.mdots{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.mdots button{font:inherit;font-weight:800;font-size:14px;min-width:44px;min-height:42px;border-radius:999px;border:2px solid var(--line);background:#fff;cursor:pointer}
+.mdots button.done{border-color:var(--ok);background:#E3F4E6}.mdots button.on{outline:3px solid var(--ce);outline-offset:1px}
+.mdots span{font-size:14px;color:var(--muted);margin-left:4px}
+
+/* Kanvas Taman Kepercayaan (Fasa 1 Alami) */
+.garden{position:relative;height:430px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(#E7F5FF 0%,#F4FCE3 72%,#D8C3A5 72%);touch-action:none;user-select:none}
+.garden video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1);opacity:.92}
+.garden svg.plant{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);height:85%;width:auto;pointer-events:none}
+.garden canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+.tok{position:absolute;left:0;top:0;z-index:4;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 10px;border-radius:14px;background:#fff;border:2px solid var(--line);box-shadow:0 4px 12px rgba(27,36,48,.12);font-weight:700;font-size:12px;cursor:grab;will-change:transform;text-align:center;line-height:1.15;max-width:118px;touch-action:none}
+.tok .e{font-size:26px;line-height:1.1}
+.tok.held{cursor:grabbing;border-color:var(--ce);box-shadow:0 8px 20px rgba(217,72,15,.3);z-index:6}
+.leafbox{position:absolute;z-index:3;border:3px dashed rgba(43,138,62,.65);border-radius:24px;pointer-events:none;transition:background .3s,border-color .3s;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px}
+.leafbox.hot{border-color:var(--ce);background:rgba(217,72,15,.12)}
+.leafbox.glow{background:rgba(255,224,102,.35);border-color:#F59F00}
+.ar-scan-popup{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);z-index:7;background:rgba(27,36,48,.94);color:#fff;padding:10px 16px;border-radius:14px;border:2px solid #F59F00;max-width:92%;text-align:center;font-size:14px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.inleaf{display:flex;gap:6px;flex-wrap:wrap;align-items:center;min-height:36px}
+.inleaf span{border:1.5px solid var(--line);border-radius:999px;padding:3px 10px;background:#fff;font-weight:700;font-size:13.5px}
+.eqn{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;font-family:var(--f-d);font-weight:800;font-size:clamp(15px,2.4vw,20px);padding:12px;border-radius:12px;background:var(--cs)}
+.eqn .t{background:#fff;border:2px solid var(--line);border-radius:12px;padding:6px 12px;text-align:center}
+.eqn .t.have{border-color:var(--ok);background:#E3F4E6}
+.eqn .t.miss{border-color:var(--bad);background:#FFE3E3;opacity:.75}
+.scene{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--soft);border-radius:12px;padding:12px}
+.scene .big{font-size:42px}
+.kw-chips{display:flex;flex-wrap:wrap;gap:6px}
+.kw-chip{border:1.5px solid var(--ro);background:#fff;color:var(--ro);border-radius:999px;padding:4px 12px;font-size:13.5px;font-weight:700;min-height:38px}
+.kw-chip:hover{background:var(--ro-soft)}
+
+.credit{max-width:1100px;margin:28px auto 0;padding:18px 16px 26px;border-top:1.5px solid var(--line,#D9DED3);text-align:center;font-size:13.5px;line-height:1.55;color:var(--muted,#5C6670)}
+.credit p{margin:2px 0}.credit b{color:var(--ink,#1B2430)}
+.credit a{color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.credit .logos{display:flex;gap:18px;justify-content:center;align-items:center;margin-bottom:8px}
+.credit .logos img{height:46px;width:auto;object-fit:contain}
+.credit .lic{font-size:12.5px}
+.bAR{color:#D9480F}.bAI{color:#1864AB}
+.home{display:inline-flex;align-items:center;gap:4px;font-weight:800;font-size:14.5px;text-decoration:none;color:var(--ink);border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:5px 12px;white-space:nowrap;cursor:pointer;font-family:inherit;min-height:40px}
+.home.warn{border-color:#C92A2A;color:#C92A2A;background:#FFF5F5}
+.home:hover,.home:focus-visible{border-color:var(--ink)}
+.pnav{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center;border-top:1.5px dashed var(--line);margin-top:6px;padding-top:14px}
+.pnav .btn{flex:0 1 auto}
+.pnav .sp{flex:1}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <button class="home" id="resetAll" type="button" data-key="kembara-akidah-jakim-t1" title="Padam kemajuan dan mula semula">🔄 Mula semula</button>
+  <span class="brand">Kembara Akidah & Rukun Iman</span>
+  <nav class="ph" aria-label="Fasa Kolb">
+    <button class="phb" data-p="0" aria-current="true"><span class="n">1</span>Alami</button>
+    <button class="phb" data-p="1"><span class="n">2</span>Renung</button>
+    <button class="phb" data-p="2"><span class="n">3</span>Faham</button>
+    <button class="phb" data-p="3"><span class="n">4</span>Cuba</button>
+  </nav>
+  <span class="stars" id="stars">★ 0</span>
+  <span class="stars" id="badges" title="Lencana">🏅 0</span>
+</div></div>
+
+<main class="wrap" id="app">
+  <header class="hero">
+    <span class="muted" style="font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:13px">Kurikulum KAFA (JAKIM) Tahun 1 · Bidang Akidah · Asas Akidah & Rukun Iman</span>
+    <h1>Kembara Akidah & Rukun Iman</h1>
+    <p class="muted">Main dahulu, fikir kemudian. Aplikasi ini membawa adik-adik Tahun 1 melalui empat fasa: alami, renung, faham dan cuba.</p>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- FASA 1: ALAMI (Pengalaman Konkrit - Seret / Gerak Tangan)  -->
+  <!-- ========================================================= -->
+  <section class="panel" data-p="0" id="p0">
+    <span class="eyebrow">Fasa 1 · Alami (pengalaman konkrit)</span>
+    <div class="guide">
+      <span class="av" aria-label="Ustaz Kecil Adam">
+        <svg viewBox="0 0 40 40" width="36" height="36">
+          <circle cx="20" cy="21" r="11" fill="#FED7AA"/>
+          <path d="M9 17 C9 8, 31 8, 31 17 Z" fill="#FFFFFF"/>
+          <circle cx="16" cy="20" r="1.5" fill="#1B2430"/>
+          <circle cx="24" cy="20" r="1.5" fill="#1B2430"/>
+          <path d="M16 25 Q20 28 24 25" stroke="#9A3412" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <p><b class="who">Ustaz Kecil Adam</b><span id="g0">Seret atau cubit kad ke dalam <b>Hati Beriman</b>, kemudian tekan <b>Uji Hati Beriman</b>!</span></p>
+    </div>
+
+    <div class="row">
+      <div class="mode2">
+        <button class="btn big" id="startBtn">✋ Mula: seret dengan jari / tetikus</button>
+        <button class="btn big" style="--c:var(--ar)" id="camBtn">📷 Mula: kamera + gerak tangan</button>
+      </div>
+      <span class="muted" id="camStat" style="font-size:14.5px"></span>
+    </div>
+
+    <div class="missions" id="missions"></div>
+
+    <!-- Kanvas Interaktif Taman Kepercayaan -->
+    <div class="garden" id="garden">
+      <video id="vid" playsinline muted hidden></video>
+      <!-- Ilustrasi Sasaran: Hati Beriman & Cahaya Akidah -->
+      <svg class="plant" viewBox="0 0 320 380" aria-hidden="true">
+        <defs>
+          <radialGradient id="heartGlowGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FACC15" stop-opacity="0.75"/>
+            <stop offset="100%" stop-color="#FACC15" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle id="svgGlow" cx="160" cy="185" r="120" fill="url(#heartGlowGrad)" opacity="0.2"/>
+        <polygon points="160,65 186,105 235,105 215,150 235,195 186,195 160,235 134,195 85,195 105,150 85,105 134,105" fill="#FDE047" stroke="#F59F00" stroke-width="3"/>
+        <path d="M160 225 C160 225 90 175 90 132 C90 108 110 92 132 92 C146 92 156 100 160 110 C164 100 174 92 188 92 C210 92 230 108 230 132 C230 175 160 225 160 225 Z" fill="#FB7185" stroke="#E11D48" stroke-width="4"/>
+        <text x="160" y="155" text-anchor="middle" fill="#FFFFFF" font-family="'Bricolage Grotesque',sans-serif" font-weight="800" font-size="16">HATI BERIMAN</text>
+        <rect x="105" y="285" width="110" height="16" rx="6" fill="#10B981" stroke="#047857" stroke-width="2"/>
+        <path d="M125 335 L195 301 M195 335 L125 301" stroke="#92400E" stroke-width="8" stroke-linecap="round"/>
+      </svg>
+
+      <!-- Zon Sasaran Imbasan Kad / Seretan -->
+      <div class="leafbox" id="leafbox">
+        <span style="font-size:12px;font-weight:800;color:#1B2430;background:rgba(255,255,255,0.88);padding:2px 8px;border-radius:999px;margin-top:auto">Zon Hati Beriman</span>
+      </div>
+
+      <!-- Paparan Muncul Atas Kad Apabila Diimbas -->
+      <div class="ar-scan-popup" id="arPopup" hidden></div>
+
+      <div id="toks"></div>
+      <canvas id="fx"></canvas>
+    </div>
+
+    <div class="row" style="justify-content:space-between">
+      <div class="inleaf" id="inleaf"><span class="muted" style="border:0;background:none">Dalam Hati Beriman: kosong</span></div>
+      <div class="row">
+        <button class="btn" id="testBtn">Uji Hati Beriman</button>
+        <button class="btn ghost sm" id="emptyBtn">Kosongkan</button>
+      </div>
+    </div>
+    <div id="fb0"></div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- FASA 2: RENUNG (Pemerhatian Reflektif + Suara ke Teks)    -->
+  <!-- ========================================================= -->
+  <section class="panel" data-p="1" id="p1" hidden>
+    <span class="eyebrow">Fasa 2 · Renung (pemerhatian reflektif)</span>
+    <div class="guide">
+      <span class="av">AA</span>
+      <p><b class="who">Ustaz Kecil Adam</b>Lihat semula rekod percubaan adik tadi. Apakah yang menjadikan Hati Beriman bersinar terang?</p>
+    </div>
+
+    <div class="card">
+      <h3>Log percubaan kamu</h3>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>#</th><th>Kad / Amalan Dimasukkan</th><th>Bilangan Kad Rukun Iman</th><th>Hasil Ujian</th></tr></thead>
+          <tbody id="logBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 3 Soalan "Apa yang berubah apabila..." -->
+    <div class="card" id="roQ"></div>
+
+    <!-- Refleksi Bebas Suara ke Teks / Bertulis -->
+    <div class="card">
+      <h3>Refleksi: Apa yang berubah pada tindakan kita apabila beriman kepada Qada dan Qadar?</h3>
+      <p class="muted" style="font-size:14.5px">Tekan mikrofon (🎤 Cakap) atau taip jawapan adik dengan menyertakan idea utama: <b>berusaha</b>, <b>berdoa</b>, dan <b>percaya ketentuan Allah</b>.</p>
+      <div class="kw-chips">
+        <button type="button" class="kw-chip" onclick="addKw('roText','tetap berusaha')">+ tetap berusaha</button>
+        <button type="button" class="kw-chip" onclick="addKw('roText','berdoa')">+ berdoa</button>
+        <button type="button" class="kw-chip" onclick="addKw('roText','percaya ketentuan Allah SWT')">+ percaya ketentuan Allah</button>
+      </div>
+      <textarea id="roText" placeholder="Tulis atau tekan butang mikrofon dan bercakap."></textarea>
+      <div class="row">
+        <button class="mic" id="roMic">🎤 Cakap</button>
+        <button class="btn sm" id="roCheck">Semak refleksi</button>
+        <span class="muted" id="roMicStat" style="font-size:14px"></span>
+      </div>
+      <div id="roTxtFb"></div>
+    </div>
+
+    <div class="row"><button class="btn" data-go="2">Teruskan ke Faham</button></div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- FASA 3: FAHAM (Konsep Abstrak + AI Adaptif Fuzzy)         -->
+  <!-- ========================================================= -->
+  <section class="panel" data-p="2" id="p2" hidden>
+    <span class="eyebrow">Fasa 3 · Faham (konsep abstrak)</span>
+    <div class="guide">
+      <span class="av">AA</span>
+      <p><b class="who">Ustaz Kecil Adam</b>Mengikut sukatan JAKIM Tahun 1, <b>Akidah</b> ialah kepercayaan dan keyakinan yang teguh dalam hati terhadap Allah SWT. Mari padankan percubaan adik dengan konsep!</p>
+    </div>
+
+    <!-- Formula & Pemadanan Percubaan Murid dengan Konsep -->
+    <div class="eqn" id="eqn"></div>
+
+    <div class="card">
+      <h3>Percubaan kamu, dalam bentuk konsep</h3>
+      <div class="opts" id="mapPick"></div>
+      <p id="mapNote"></p>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Susunan 6 Rukun Iman (Wajib Dipercayai)</h3>
+        <p style="font-size:15px"><b>1. Beriman kepada Allah</b> → <b>2. Beriman kepada Malaikat</b> → <b>3. Beriman kepada Kitab</b> → <b>4. Beriman kepada Rasul</b> → <b>5. Beriman kepada Hari Akhirat</b> → <b>6. Beriman kepada Qada dan Qadar</b></p>
+        <p class="muted" style="font-size:14px">Hukum mempercayai keenam-enam Rukun Iman adalah <b>Wajib</b> bagi setiap orang Islam.</p>
+      </div>
+      <div class="card">
+        <h3>Rumus Ikhtiar & Qada Qadar</h3>
+        <p style="font-size:15px"><b>Ketentuan Allah SWT + Berusaha + Berdoa = Beriman kepada Qada & Qadar</b></p>
+        <p class="muted" style="font-size:14px">Allah mengetahui dan menetapkan segala sesuatu, dan kita wajib berusaha serta berdoa.</p>
+      </div>
+    </div>
+
+    <!-- Penerangan Suara ke Teks / Bertulis & Semakan Sebutan -->
+    <div class="card">
+      <h3>Terangkan dengan suara sendiri</h3>
+      <p class="muted">Bagaimanakah cara kita membuktikan iman dalam hati melalui kehidupan harian? (Idea utama: <b>percaya dalam hati</b>, <b>kata-kata baik</b>, <b>perbuatan baik</b>)</p>
+      <textarea id="acText" placeholder="Tekan mikrofon dan terangkan, atau taip di sini."></textarea>
+      <div class="row">
+        <button class="mic" id="acMic">🎤 Cakap</button>
+        <button class="btn sm" id="acCheck">Semak penerangan</button>
+        <span class="muted" id="acMicStat" style="font-size:14px"></span>
+      </div>
+      <div id="acFb"></div>
+
+      <hr style="border:0;border-top:1px dashed var(--line);margin:4px 0">
+      <h3>Uji Sebutan Istilah Akidah</h3>
+      <p class="muted" style="font-size:14.5px">Sebutkan istilah sasaran: <b id="targetWord" style="color:var(--ac)">Rukun Iman</b></p>
+      <div class="row">
+        <input type="text" id="pronInput" placeholder="Tekan 🎤 Sebut atau taip istilah di atas" style="max-width:280px">
+        <button class="mic" id="pronMic">🎤 Sebut</button>
+        <button class="btn sm" id="pronCheck">Semak sebutan</button>
+        <button class="btn ghost sm" id="pronNext">Tukar istilah</button>
+      </div>
+      <div id="pronFb"></div>
+    </div>
+
+    <!-- KUIZ ADAPTIF BERASASKAN ENJIN LOGIK KABUR (FUZZY) -->
+    <div class="card">
+      <div class="row" style="justify-content:space-between">
+        <h3>Uji kefahaman (Kuiz AI Adaptif)</h3>
+        <span class="level" id="qLvl">Aras <i class="on"></i><i></i><i></i></span>
+      </div>
+      <div class="aiaBox"></div>
+      <p class="muted" style="font-size:14.5px" id="qProg">Soalan 1 daripada 9</p>
+      <p id="qText" style="font-weight:700;font-size:17px"></p>
+      <div class="opts" id="qOpts"></div>
+      <div id="qFb"></div>
+      <div class="row">
+        <button type="button" class="qhint" id="qHint">💡 Petunjuk</button>
+        <button class="btn sm" id="qNext" hidden>Soalan seterusnya</button>
+      </div>
+    </div>
+
+    <div class="row"><button class="btn" data-go="3">Teruskan ke Cuba</button></div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- FASA 4: CUBA (Uji Kaji Aktif: 3 Situasi Baharu)           -->
+  <!-- ========================================================= -->
+  <section class="panel" data-p="3" id="p3" hidden>
+    <span class="eyebrow">Fasa 4 · Cuba (uji kaji aktif)</span>
+    <div class="guide">
+      <span class="av">AA</span>
+      <p><b class="who">Ustaz Kecil Adam</b>Sekarang mari cuba 3 situasi dalam kehidupan harian murid Tahun 1. <b>Ramal dahulu</b> tindakan yang betul, kemudian tekan Uji Ramalan!</p>
+    </div>
+
+    <div class="aiaBox"></div>
+
+    <div class="chal" id="chalList"></div>
+
+    <div class="card">
+      <h3 id="cTitle"></h3>
+      <div class="scene">
+        <span class="big" id="cIcon"></span>
+        <p id="cDesc" style="flex:1 1 240px"></p>
+      </div>
+      <div id="cAsk" class="sliders"></div>
+      <div class="row"><button class="btn" id="cTest">Uji Ramalan</button></div>
+      <div id="cFb"></div>
+    </div>
+
+    <div class="card">
+      <h3>Bukti: pengalaman menjadi pengetahuan</h3>
+      <div class="evidence">
+        <div><b id="evDone">0/3</b>situasi selesai</div>
+        <div><b id="evAcc">–</b>ramalan tepat</div>
+        <div><b id="evQuiz">–</b>kuiz konsep betul</div>
+        <div><b id="evTrials">0</b>percubaan fasa Alami</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+const $=s=>document.querySelector(s),$$=s=>Array.from(document.querySelectorAll(s));
+const KEY="kembara-akidah-jakim-t1";
+let S={};try{S=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){S={};}
+S.stars=S.stars||0;S.log=S.log||[];S.mis=S.mis||{};S.phase=S.phase||0;S.done=S.done||{};S.quiz=S.quiz||{ok:0,n:0};S.chal=S.chal||{};S.preds=S.preds||[];
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}};
+let tT;function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),2800);}
+const PRAISE=["Hebat!","Syabas!","Bagus sekali!","Tepat!","Alhamdulillah, cemerlang!"];const pr=()=>PRAISE[Math.floor(Math.random()*PRAISE.length)];
+function star(n){S.stars+=n;save();$("#stars").textContent="★ "+S.stars;}
+
+/* ===== Sokongan Dialog (Oinas-Kukkonen & Harjumaa, 2009): pencetus, peringatan, cadangan, pujian, ganjaran ===== */
+const SD_L={pencetus:"Pencetus",peringatan:"Peringatan",cadangan:"Cadangan",pujian:"Pujian",ganjaran:"Ganjaran"};
+const SD_IH=Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML");
+const sdChip=t=>`<span class="sd sd-${t}">${SD_L[t]}</span> `;
+function sd(type,html){
+  const p=document.querySelector('.panel:not([hidden]) .guide p');if(!p)return;
+  let t=p.querySelector('span[id]');
+  if(!t){const who=p.querySelector('.who');const rest=[...p.childNodes].filter(n=>n!==who);t=document.createElement('span');t.id="sdg"+Math.random().toString(36).slice(2,7);rest.forEach(n=>t.appendChild(n));p.appendChild(t);}
+  SD_IH.set.call(t,sdChip(type)+html);
+}
+(function(){const g=document.getElementById("g0");if(!g)return;
+  Object.defineProperty(g,"innerHTML",{configurable:true,get(){return SD_IH.get.call(g);},set(v){v=String(v);SD_IH.set.call(g,v.startsWith('<span class="sd ')?v:sdChip("cadangan")+v);}});
+  Object.defineProperty(g,"textContent",{configurable:true,get(){return g.innerText;},set(v){SD_IH.set.call(g,sdChip("cadangan")+String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;"));}});
+})();
+S.badges=S.badges||[];
+function badgeUI(){const b=document.getElementById("badges");if(b)b.textContent="🏅 "+S.badges.length;}
+function award(name){if(S.badges.includes(name))return;S.badges.push(name);save();badgeUI();sd("ganjaran",`Tahniah! Adik menerima lencana <b>${name}</b>.`);toast("🏅 Ganjaran: lencana "+name);}
+document.addEventListener("DOMContentLoaded",badgeUI);setTimeout(badgeUI,0);
+setTimeout(()=>{const b=document.getElementById("badges");if(b)b.onclick=()=>toast(S.badges.length?"Lencana adik: "+S.badges.join(", "):"Belum ada lencana. Selesaikan misi untuk mendapatkannya.");},0);
+
+function sdIdle(getMsg){
+  let last=Date.now(),sent=false;
+  ["pointerdown","keydown","input"].forEach(ev=>document.addEventListener(ev,()=>{last=Date.now();sent=false;},true));
+  setInterval(()=>{if(sent||document.hidden||Date.now()-last<25000)return;const m=getMsg();if(!m)return;sent=true;sd("peringatan",m);toast("Peringatan: "+m.replace(/<[^>]+>/g,""));},5000);
+}
+
+// Semakan jawapan bertulis atau suara dengan kata kunci
+function sdCheck(text,K,fbEl){
+  const t=(text||"").toLowerCase();
+  if(t.trim().length<5){
+    fbEl.innerHTML='<div class="fb info">Tulis atau cakap sekurang-kurangnya satu ayat dahulu.</div>';
+    sd("cadangan","Cuba terangkan dalam satu atau dua ayat pendek.");
+    return 0;
+  }
+  const got=K.filter(([,re])=>re.test(t)).map(([k])=>k);
+  const miss=K.filter(([,re])=>!re.test(t)).map(([k])=>k);
+  const good=got.length>=Math.min(2,K.length);
+  fbEl.innerHTML=`<div class="fb ${good?"ok":"bad"}">${good?pr()+" Jawapan tepat! ":"Belum lengkap. "}Idea utama yang betul: <b>${got.join(", ")||"belum dikesan"}</b>.${miss.length?" Idea yang tertinggal: <b>"+miss.join(", ")+"</b>.":" Semua idea utama lengkap!"}</div>`;
+  if(good)sd("pujian",`${pr()} Jawapan adik tepat kerana menyebut ${got.join(", ")}.`);
+  else sd("cadangan","Cuba tambah idea yang tertinggal: "+miss.join(", ")+".");
+  return got.length;
+}
+
+function sdTag(type){
+  const p=document.querySelector('.panel:not([hidden]) .guide p');if(!p)return;
+  let t=p.querySelector('span[id]');
+  if(t){if(!t.querySelector('.sd'))SD_IH.set.call(t,sdChip(type)+SD_IH.get.call(t));return;}
+  const who=p.querySelector('.who');const rest=[...p.childNodes].filter(n=>n!==who);t=document.createElement('span');t.id="sdg"+Math.random().toString(36).slice(2,7);rest.forEach(n=>t.appendChild(n));p.appendChild(t);t.insertAdjacentHTML('afterbegin',sdChip(type));
+}
+
+let MSEL=null;
+function misUI(el,MIS,done,opt){
+  opt=opt||{};const n=MIS.filter(m=>done[m.id]).length;if(el._n!==n){el._n=n;MSEL=null;}
+  const cur=MIS.find(m=>!done[m.id]),f=MIS.find(m=>m.id===MSEL)||cur;let h;
+  if(!f)h=`<div class="mcur all"><span class="mlab">Semua ${MIS.length} misi selesai ✓</span><b>Tahniah! Teruskan ke fasa 2 Renung.</b><button class="btn ghost sm mreset" type="button">🔄 Mahu cuba lagi dari awal?</button></div>`;
+  else{const i=MIS.indexOf(f),st=opt.started&&opt.started();
+    h=`<div class="mcur ${done[f.id]?"isdone":""}"><span class="mlab">🎯 Misi ${i+1} daripada ${MIS.length}${done[f.id]?" · selesai ✓":f===cur?" · sekarang":""}</span><b class="mt">${f.t}</b>${f.h?`<p>💡 <b>Cara:</b> ${f.h}</p>`:""}${opt.extra&&f===cur?opt.extra(f):""}${!st&&opt.start?`<button class="btn sm mgo">▶ Mula misi ini</button>`:""}</div>`;}
+  h+=`<div class="mdots" role="group" aria-label="Pilih misi">${MIS.map((m,i)=>`<button class="${done[m.id]?"done":""} ${f&&m.id===f.id?"on":""}" data-m="${m.id}" aria-label="Misi ${i+1}">${i+1}${done[m.id]?" ✓":""}</button>`).join("")}<span>${n}/${MIS.length} selesai</span></div>`;
+  el.innerHTML=h;el.classList.add("mpanel");
+  el.querySelectorAll("[data-m]").forEach(b=>b.onclick=()=>{MSEL=b.dataset.m;misUI(el,MIS,done,opt);});
+  const rs=el.querySelector(".mreset");if(rs)rs.onclick=()=>{if(window.resetApp){window.resetApp();rs.textContent="Tekan 🔄 di atas sekali lagi untuk sahkan";}};
+  const g=el.querySelector(".mgo");if(g)g.onclick=()=>{opt.start();misUI(el,MIS,done,opt);};
+}
+
+/* ================= AI ADAPTIF: ENJIN LOGIK KABUR (FUZZY) MAMDANI =================
+   DIKEKALKAN SEPENUHNYA TANPA MENGUBAH FUNGSI KEAHLIAN DAN 10 PERATURANNYA */
+function fzTrap(x,[a,b,c,d]){if(x<a||x>d)return 0;if(x>=b&&x<=c)return 1;return x<b?(x-a)/(b-a):(d-x)/(d-c);}
+const FZ={
+  in:{ketepatan:{label:"Ketepatan",max:100,fmt:v=>Math.round(v)+"%",sets:{rendah:[0,0,30,50],sederhana:[30,55,55,80],tinggi:[60,80,100,100]}},
+      petunjuk:{label:"Petunjuk",max:2,fmt:v=>v.toFixed(1)+" / soalan",sets:{sedikit:[0,0,0.2,0.6],sederhana:[0.2,0.6,0.6,1.2],banyak:[0.8,1.4,2,2]}},
+      masa:{label:"Masa",max:3,fmt:v=>v.toFixed(1)+"× jangkaan",sets:{pantas:[0,0,0.5,0.9],biasa:[0.6,1,1,1.5],lambat:[1.2,2,3,3]}}},
+  out:{novis:[0,0,25,45],sederhana:[30,50,50,70],mahir:[55,75,100,100]},
+  rules:[
+    [{ketepatan:"rendah"},"novis"],
+    [{ketepatan:"sederhana",petunjuk:"sedikit"},"sederhana"],
+    [{ketepatan:"sederhana",petunjuk:"sederhana"},"sederhana"],
+    [{ketepatan:"sederhana",petunjuk:"banyak"},"novis"],
+    [{ketepatan:"tinggi",petunjuk:"sedikit"},"mahir"],
+    [{ketepatan:"tinggi",petunjuk:"sederhana"},"sederhana"],
+    [{ketepatan:"tinggi",petunjuk:"banyak"},"sederhana"],
+    [{ketepatan:"tinggi",masa:"pantas"},"mahir"],
+    [{ketepatan:"tinggi",masa:"lambat"},"sederhana"],
+    [{petunjuk:"banyak",masa:"lambat"},"novis"]]};
+const FZ_N={novis:"Novis",sederhana:"Sederhana",mahir:"Mahir"};
+function fzInfer(x){const mu={};for(const k in FZ.in){mu[k]={};for(const s in FZ.in[k].sets)mu[k][s]=fzTrap(Math.max(0,Math.min(x[k],FZ.in[k].max)),FZ.in[k].sets[s]);}
+  const fired=FZ.rules.map(([c,o],i)=>({i:i+1,c,o,w:Math.min(...Object.entries(c).map(([k,s])=>mu[k][s]))}));
+  const cut={};fired.forEach(r=>{cut[r.o]=Math.max(cut[r.o]||0,r.w);});
+  let num=0,den=0;for(let y=0;y<=100;y++){let m=0;for(const o in FZ.out)m=Math.max(m,Math.min(cut[o]||0,fzTrap(y,FZ.out[o])));num+=y*m;den+=m;}
+  const score=den?num/den:50,tier=score<40?"novis":score<65?"sederhana":"mahir";
+  return {score:Math.round(score),tier,lvl:{novis:1,sederhana:2,mahir:3}[tier],mu,cut,fired:fired.filter(r=>r.w>0).sort((a,b)=>b.w-a.w)};}
+S.aia=S.aia||{h:[]};
+function aiaState(){const h=S.aia.h;if(h.length<2)return {ready:false,tier:"sederhana",lvl:2,n:h.length};
+  const x={ketepatan:100*h.reduce((a,b)=>a+b.ok,0)/h.length,petunjuk:h.reduce((a,b)=>a+b.hint,0)/h.length,masa:h.reduce((a,b)=>a+b.t,0)/h.length};
+  return Object.assign({ready:true,x,n:h.length},fzInfer(x));}
+function aiaRecord(r){const before=aiaState();S.aia.cnt=(S.aia.cnt||0)+1;S.aia.h.push({ok:r.ok?1:0,w:r.wrong?1:0,hint:Math.min(2,r.hints||0),t:Math.min(3,(r.secs||r.exp)/(r.exp||20)),c:r.concept||""});S.aia.h=S.aia.h.slice(-5);save();
+  const after=aiaState();aiaUI();return {before,after,changed:before.ready&&after.ready&&before.tier!==after.tier,remedial:aiaRemedial()};}
+function aiaRemedial(){const h=S.aia.h,n=h.length;if(n<2||!h[n-1].w||!h[n-2].w)return false;if((S.aia.cnt||0)-(S.aia.remCnt||-9)<2)return false;S.aia.remCnt=S.aia.cnt;return true;}
+const fzShort=r=>Object.entries(r.c).map(([k,s])=>FZ.in[k].label+" "+s).join(" + ")+" → "+FZ_N[r.o];
+const ARAS=["","Mudah","Sederhana","Sukar"];
+const AIA_DO={novis:"Jadi soalan seterusnya lebih mudah, dan petunjuk diberi dengan lebih jelas.",sederhana:"Jadi soalan seterusnya pada aras Sederhana, dengan petunjuk umum apabila perlu.",mahir:"Jadi soalan seterusnya lebih mencabar, dan petunjuk hanya diberi jika adik memintanya."};
+function aiaWhy(st){const h=S.aia.h,ok=h.reduce((a,b)=>a+b.ok,0),p=st.x.petunjuk,m=st.x.masa;
+  return `Adik menjawab <b>${ok} daripada ${h.length}</b> dengan betul pada cubaan pertama, ${p<0.1?"tanpa petunjuk":p<0.6?"dengan sedikit petunjuk":p<1.2?"dengan beberapa petunjuk":"dengan banyak petunjuk"}, dan ${m<0.9?"lebih pantas daripada jangkaan":m<=1.5?"dalam masa biasa":"agak lambat"}. ${AIA_DO[st.tier]}`;}
+let AIA_OPEN={why:false,rules:false};
+try{AIA_OPEN=Object.assign(AIA_OPEN,JSON.parse(sessionStorage.getItem("aiaOpen")||"{}"));}catch(e){}
+function aiaUI(){const st=aiaState(),min=!!S.aiaMin;document.querySelectorAll(".aiaBox").forEach(el=>{
+  const head=`<div class="aiah"><span class="sd sd-ai">AI Adaptif</span>${st.ready?`<b>Tahap adik: ${FZ_N[st.tier]}</b><span class="aiaarr">→ soalan seterusnya: <b>${ARAS[st.lvl]}</b></span>`:`<b>Sedang mengenali tahap adik</b>`}<button type="button" class="aiamin" aria-expanded="${!min}">${min?"Tunjuk":"Sembunyi"}</button></div>`;
+  if(min){el.innerHTML=`<div class="aia mini">${head}</div>`;}
+  else if(!st.ready){el.innerHTML=`<div class="aia">${head}<p class="aian">Selesaikan ${2-st.n} lagi soalan atau cabaran. Aktiviti bermula pada aras Sederhana. Selepas itu, AI akan memilih aras dan jenis petunjuk yang sesuai untuk adik.</p></div>`;}
+  else{const lv=(k)=>{const e=Object.entries(st.mu[k]).sort((a,b)=>b[1]-a[1])[0];return e[0];};
+    el.innerHTML=`<div class="aia">${head}
+    <p class="aian">${aiaWhy(st)}</p>
+    <details data-k="why" ${AIA_OPEN.why?"open":""}><summary>Bagaimana AI membuat keputusan?</summary>
+      <p>AI menggunakan <b>logik kabur (fuzzy)</b>: ia melihat tiga perkara, menilai setiap satu sebagai rendah, sederhana atau tinggi, kemudian menggunakan peraturan seperti seorang ustaz/ustazah.</p>
+      <table class="fzt"><tr><th>Perkara</th><th>Data adik</th><th>Nilai</th></tr>
+      ${Object.keys(FZ.in).map(k=>`<tr><td>${FZ.in[k].label}</td><td>${FZ.in[k].fmt(st.x[k])}</td><td><b>${lv(k)}</b></td></tr>`).join("")}</table>
+      <p>Peraturan yang digunakan:</p><ul>${st.fired.slice(0,3).map(r=>`<li>${fzShort(r)}</li>`).join("")}</ul>
+      <p>Keputusan: <b>${FZ_N[st.tier]}</b> (skor ${st.score}/100).</p>
+      <details data-k="rules" ${AIA_OPEN.rules?"open":""}><summary>Semua 10 peraturan (untuk guru dan pakar)</summary><ol class="fzall">${FZ.rules.map(r=>`<li>${fzShort({c:r[0],o:r[1]})}</li>`).join("")}</ol></details>
+    </details></div>`;}
+  const b=el.querySelector(".aiamin");if(b)b.onclick=()=>{S.aiaMin=!S.aiaMin;save();aiaUI();};
+  el.querySelectorAll("details[data-k]").forEach(d=>d.addEventListener("toggle",e=>{e.stopPropagation();AIA_OPEN[d.dataset.k]=d.open;try{sessionStorage.setItem("aiaOpen",JSON.stringify(AIA_OPEN));}catch(_){}}));});}
+
+/* ================= KUIZ ADAPTIF (menggunakan enjin fuzzy AI Adaptif) ================= */
+function bankGen(QB){return (L,Q)=>{const recent=Q.used.slice(-2),fresh=QB.filter(q=>!Q.used.includes(q.id));
+  let c=fresh.filter(q=>q.lvl===L);
+  if(!c.length)c=QB.filter(q=>q.lvl===L&&Q.wrongIds.includes(q.id)&&!recent.includes(q.id));
+  if(!c.length&&fresh.length){const d=Math.min(...fresh.map(q=>Math.abs(q.lvl-L)));c=fresh.filter(q=>Math.abs(q.lvl-L)===d);}
+  if(!c.length)c=QB.filter(q=>q.lvl===L&&!recent.includes(q.id));
+  const q=c[Math.floor(Math.random()*c.length)];return Object.assign({},q,{opts:q.o.map(x=>({html:x,ok:x===q.a,cls:q.ocls}))});};}
+
+function adaptiveQuiz(cfg){const total=cfg.total||9,exp=cfg.exp||25,cls=cfg.optClass||"opt";
+  const Q={n:0,cur:null,round:1,used:[],wrongIds:[],remed:null,tries:0,hints:0,t0:0};
+  const freshRes=()=>({ok:0,n:0,by:{1:[0,0],2:[0,0],3:[0,0]}});Q.res=freshRes();
+  if(!$("#qHint"))$("#qNext").insertAdjacentHTML("beforebegin",'<button type="button" class="qhint" id="qHint">💡 Petunjuk</button>');
+  if(!$("#qFb"))$("#qOpts").insertAdjacentHTML("afterend",'<div id="qFb"></div>');
+  const lvlDots=L=>$$("#qLvl i").forEach((e,k)=>e.classList.toggle("on",k<L));
+  const after=()=>{if(cfg.after)cfg.after(Q);};
+  function next(){if(Q.n>=total){result();return;}if(Q.remed){remedial();return;}
+    const L=aiaState().lvl;Q.cur=cfg.gen(L,Q);Q.cur.lvl=Q.cur.lvl||L;if(Q.cur.id)Q.used.push(Q.cur.id);
+    Q.tries=0;Q.hints=0;Q.t0=Date.now();$("#qHint").hidden=false;$("#qHint").disabled=false;
+    const opts=cfg.noShuffle?Q.cur.opts:Q.cur.opts.slice().sort(()=>Math.random()-.5);Q.cur.shown=opts;
+    $("#qProg").innerHTML=`Soalan ${Q.n+1} daripada ${total} <span class="qaras a${Q.cur.lvl}">Aras ${ARAS[Q.cur.lvl]}</span>`;
+    $("#qText").innerHTML=Q.cur.t;$("#qFb").innerHTML="";$("#qNext").hidden=true;lvlDots(Q.cur.lvl);
+    $("#qOpts").innerHTML=opts.map((o,i)=>`<button class="${cls}${o.cls?" "+o.cls:""}" data-i="${i}"${o.aria?` aria-label="${o.aria}"`:""}>${o.html}</button>`).join("");
+    if(cfg.onShow)cfg.onShow(Q.cur);
+    $$("#qOpts ."+cls).forEach(b=>b.onclick=()=>{if($("#qOpts .right"))return;const o=opts[+b.dataset.i];
+      if(o.ok){b.classList.add("right");const clean=Q.tries===0;
+        if(!clean&&Q.cur.id&&!Q.wrongIds.includes(Q.cur.id))Q.wrongIds.push(Q.cur.id);if(clean&&Q.cur.id)Q.wrongIds=Q.wrongIds.filter(x=>x!==Q.cur.id);
+        Q.res.n++;if(clean)Q.res.ok++;const bl=Q.res.by[Q.cur.lvl];bl[1]++;if(clean)bl[0]++;S.quiz={ok:Q.res.ok,n:Q.res.n};
+        star(clean?2:1);Q.n++;let msg=pr();$("#qHint").hidden=true;
+        if(cfg.onRight)cfg.onRight(Q.cur,clean);
+        const r=aiaRecord({ok:clean&&Q.hints===0,wrong:Q.tries>0,hints:Q.tries+Q.hints,secs:(Date.now()-Q.t0)/1000,exp,concept:Q.cur.c});
+        if(r.after.ready&&r.after.lvl!==Q.cur.lvl)msg+=` AI Adaptif: tahap adik kini ${FZ_N[r.after.tier]}, jadi soalan seterusnya aras ${ARAS[r.after.lvl]}.`;
+        Q.remed=r.remedial?Q.cur.c:null;
+        $("#qFb").innerHTML=`<div class="fb ok">${msg}</div>`;sd("pujian",msg);$("#qNext").hidden=false;}
+      else{b.classList.add("wrong");b.disabled=true;Q.tries++;if(cfg.onWrong)cfg.onWrong(Q.cur);const t=aiaState().tier;let hint;
+        if(t==="mahir"&&Q.tries===1)hint="Cuba fikir semula. Adik pasti boleh!";
+        else if(t==="novis"){const rest=[...$$("#qOpts ."+cls)].filter(x=>!x.disabled&&!opts[+x.dataset.i].ok);if(rest.length>1){rest[0].disabled=true;rest[0].classList.add("wrong");rest[0].insertAdjacentHTML("beforeend",' <small>(bukan)</small>');}hint=`Petunjuk: ${Q.cur.hx||Q.cur.h} Satu pilihan yang salah telah dibuang.`;}
+        else hint=`Petunjuk: ${Q.cur.h}`;
+        $("#qFb").innerHTML=`<div class="fb bad">Belum tepat. ${hint}</div>`;sd("cadangan",`Belum tepat. ${hint}`);}
+      save();after();});
+    after();}
+  function remedial(){const k=Q.remed,m=(cfg.remedial&&cfg.remedial[k])||Object.values(cfg.remedial||{})[0];Q.remed=null;if(!m){next();return;}
+    $("#qProg").textContent="Aktiviti pembetulan";$("#qText").innerHTML="";$("#qOpts").innerHTML="";$("#qHint").hidden=true;$("#qNext").hidden=false;
+    $("#qFb").innerHTML=`<div class="remed"><p style="margin:0 0 6px"><span class="sd sd-ai">AI Adaptif</span> <b>Dua jawapan terakhir salah pada cubaan pertama.</b> Mari ulang kaji: <b>${m.t}</b>.</p><p style="margin:0 0 8px">${m.d}</p><div class="row">${m.b?`<button class="btn sm" id="remGo">${m.b}</button>`:""}<span class="muted" style="font-size:15px">atau tekan Soalan seterusnya untuk soalan yang lebih mudah.</span></div></div>`;
+    sd("cadangan",`AI Adaptif mengesan adik perlu ulang kaji: ${m.t}.`);if(m.b)$("#remGo").onclick=m.go;}
+  function result(){const r=Q.res,st=aiaState(),L=st.lvl;Q.cur=null;
+    $("#qProg").innerHTML=`Keputusan pusingan ${Q.round}`;lvlDots(L);
+    const row=k=>r.by[k][1]?`<tr><td><span class="qaras a${k}">${ARAS[k]}</span></td><td>${r.by[k][0]} daripada ${r.by[k][1]}</td></tr>`:"";
+    const tip={novis:"Cuba sekali lagi. AI akan bermula dengan soalan <b>Mudah</b> untuk mengukuhkan asas adik.",sederhana:"Cuba sekali lagi. AI akan bermula pada aras <b>Sederhana</b>, dan menaikkan aras jika adik menjawab dengan baik.",mahir:"Hebat! Cuba sekali lagi untuk lebih banyak soalan <b>Sukar</b>, atau teruskan ke fasa Cuba."}[st.tier];
+    const got=r.ok>=(cfg.badgeMin||6);
+    $("#qText").innerHTML=`<b>Kuiz selesai!</b> Betul ${r.ok} daripada ${r.n} pada cubaan pertama.${got&&cfg.badge?" Lencana "+cfg.badge+".":""}
+      <table class="fzt" style="max-width:340px"><tr><th>Aras soalan</th><th>Betul pada cubaan pertama</th></tr>${row(1)}${row(2)}${row(3)}</table>
+      <div class="fb info"><span class="sd sd-ai">AI Adaptif</span> Tahap adik sekarang: <b>${FZ_N[st.tier]}</b>. ${tip}</div>`;
+    $("#qOpts").innerHTML=`<button class="btn sm" id="qAgain">🔁 Cuba lagi (mula aras ${ARAS[L]})</button><button class="btn sm ghost" id="qReset">🔄 Mula semula kuiz dari awal</button>`;
+    $("#qHint").hidden=true;$("#qFb").innerHTML="";$("#qNext").hidden=true;S.done[2]=true;if(got&&cfg.badge)award(cfg.badge);save();after();
+    const fresh=()=>{Q.n=0;Q.round++;Q.used=[];Q.res=freshRes();Q.cur=null;Q.remed=null;};
+    $("#qAgain").onclick=()=>{fresh();next();sd("pencetus",`Pusingan ${Q.round}: AI memulakan soalan pada aras ${ARAS[aiaState().lvl]}.`);};
+    $("#qReset").onclick=()=>{fresh();Q.round=1;Q.wrongIds=[];S.aia={h:[]};save();aiaUI();next();sd("pencetus","Kuiz bermula semula. AI akan mengenali tahap adik dari awal, bermula pada aras Sederhana.");};}
+  $("#qNext").onclick=()=>next();
+  $("#qHint").onclick=()=>{if(!Q.cur||$("#qOpts .right"))return;Q.hints++;$("#qHint").disabled=true;$("#qFb").innerHTML=`<div class="fb info">💡 ${Q.cur.h}</div>`;sd("cadangan",`Petunjuk: ${Q.cur.h}`);};
+  return {Q,start(){if(!Q.cur&&Q.n===0)next();aiaUI();},next};}
+
+$("#stars").textContent="★ "+S.stars;
+function go(p){
+  try{if(p!==0&&window.__handOff)window.__handOff();}catch(e){}
+  setTimeout(()=>sdTag(["pencetus","peringatan","cadangan","pencetus"][p]),0);
+  S.phase=p;save();
+  $$(".panel").forEach(x=>x.hidden=+x.dataset.p!==p);
+  $$(".phb").forEach(b=>b.setAttribute("aria-current",+b.dataset.p===p));
+  $$(".phb").forEach(b=>b.classList.toggle("done",!!S.done[b.dataset.p]));
+  window.scrollTo({top:0,behavior:"smooth"});
+  if(p===0){layout();if(G.toks.length&&!G.toks[0].w)build();}
+  if(p===1)renderRO();
+  if(p===2)renderAC();
+  if(p===3)renderAE();
+}
+$$(".phb").forEach(b=>b.onclick=()=>go(+b.dataset.p));
+$$("[data-go]").forEach(b=>b.onclick=()=>{S.done[S.phase]=true;go(+b.dataset.go);});
+
+/* ================= FASA 1: TAMAN KEPERCAYAAN (6 KAD RUKUN IMAN + AMALAN HARIAN - JAKIM TAHUN 1) ================= */
+const ITEMS=[
+  {k:"k1",e:"🌟",n:"Kad 1: Allah",type:"kad",scan:"Rukun Iman Pertama: Beriman kepada Allah. Allah SWT ialah Tuhan Yang Maha Esa, Pencipta segala makhluk, tiada sekutu bagi-Nya."},
+  {k:"k2",e:"🪽",n:"Kad 2: Malaikat",type:"kad",scan:"Rukun Iman Kedua: Beriman kepada Malaikat. Malaikat ialah makhluk Allah yang dicipta daripada cahaya dan sentiasa taat perintah Allah."},
+  {k:"k3",e:"📖",n:"Kad 3: Kitab",type:"kad",scan:"Rukun Iman Ketiga: Beriman kepada Kitab. Kitab ialah wahyu dan petunjuk Allah kepada manusia. Al-Quran ialah kitab suci umat Islam."},
+  {k:"k4",e:"🚩",n:"Kad 4: Rasul",type:"kad",scan:"Rukun Iman Keempat: Beriman kepada Rasul. Rasul ialah lelaki pilihan Allah yang menyampaikan ajaran Islam. Nabi Muhammad SAW ialah rasul terakhir."},
+  {k:"k5",e:"⏳",n:"Kad 5: Hari Akhirat",type:"kad",scan:"Rukun Iman Kelima: Beriman kepada Hari Akhirat. Pada Hari Akhirat, manusia akan dibangkitkan dan dihisab segala amalannya."},
+  {k:"k6",e:"🛤️",n:"Kad 6: Qada & Qadar",type:"kad",scan:"Rukun Iman Keenam: Beriman kepada Qada dan Qadar. Allah mengetahui dan menetapkan segala sesuatu, dan kita wajib berusaha serta berdoa."},
+  {k:"a1",e:"🗣️",n:"Berkata benar",type:"amalan",scan:"Amalan Harian (Akhlak Mulia): Berkata benar membuktikan keimanan yang teguh dalam hati."},
+  {k:"a2",e:"🤝",n:"Hormat & Bantu",type:"amalan",scan:"Amalan Harian (Akhlak Mulia): Menghormati ibu bapa, membantu dan menjaga kebersihan."}
+];
+const NAME=Object.fromEntries(ITEMS.map(i=>[i.k,i.n]));
+const garden=$("#garden"),fx=$("#fx"),fctx=fx.getContext("2d");
+const G={toks:[],held:null,leaf:new Set(),parts:[],glow:0};
+let started=false;
+
+function leafRect(){
+  const W=garden.clientWidth,H=garden.clientHeight;
+  return {x:W*0.32,y:H*0.16,w:W*0.36,h:H*0.44};
+}
+function layout(){
+  const d=window.devicePixelRatio||1;
+  fx.width=garden.clientWidth*d;fx.height=garden.clientHeight*d;
+  fctx.setTransform(d,0,0,d,0,0);
+  const L=leafRect(),lb=$("#leafbox");
+  lb.style.left=L.x+"px";lb.style.top=L.y+"px";lb.style.width=L.w+"px";lb.style.height=L.h+"px";
+}
+window.addEventListener("resize",layout);
+
+function build(){
+  $("#toks").innerHTML="";
+  const W=garden.clientWidth,H=garden.clientHeight;
+  G.toks=ITEMS.filter(i=>!G.leaf.has(i.k)).map((it,n)=>{
+    const el=document.createElement("div");
+    el.className="tok";
+    el.innerHTML=`<span class="e">${it.e}</span>${it.n}`;
+    $("#toks").appendChild(el);
+    const side=n%2===0;
+    const t={
+      it,el,w:el.offsetWidth||95,h:el.offsetHeight||58,
+      x:side?8+Math.random()*(W*0.20):W*0.72+Math.random()*(W*0.18),
+      y:16+Math.random()*(H*0.62),
+      vx:(Math.random()-.5)*35,vy:(Math.random()-.5)*35,wob:Math.random()*6
+    };
+    el.addEventListener("pointerdown",e=>{
+      if(!started)return;
+      e.preventDefault();
+      garden.setPointerCapture&&garden.setPointerCapture(e.pointerId);
+      grab(t,e.clientX-garden.getBoundingClientRect().left,e.clientY-garden.getBoundingClientRect().top);
+    });
+    return t;
+  });
+}
+
+function grab(t,x,y){if(G.held)return;G.held=t;t.ox=x-t.x;t.oy=y-t.y;t.el.classList.add("held");}
+function inLeaf(x,y){const L=leafRect();return x>L.x&&x<L.x+L.w&&y>L.y&&y<L.y+L.h;}
+function moveHeld(x,y){const t=G.held;if(!t)return;t.x=x-t.ox;t.y=y-t.oy;$("#leafbox").classList.toggle("hot",inLeaf(x,y));}
+function release(x,y){
+  const t=G.held;if(!t)return;G.held=null;t.el.classList.remove("held");$("#leafbox").classList.remove("hot");
+  if(inLeaf(x,y)){
+    G.leaf.add(t.it.k);
+    t.el.remove();
+    G.toks=G.toks.filter(k=>k!==t);
+    renderLeaf();
+    const pop=$("#arPopup");
+    pop.hidden=false;
+    pop.innerHTML=`<b>🔍 Imbasan ${t.it.n}:</b><br>${t.it.scan}`;
+    clearTimeout(window.arPopTimer);
+    window.arPopTimer=setTimeout(()=>{pop.hidden=true;},5500);
+    toast("Imbasan berjaya: "+t.it.n);
+  }
+}
+const gpos=e=>{const r=garden.getBoundingClientRect();return {x:e.clientX-r.left,y:e.clientY-r.top};};
+garden.addEventListener("pointermove",e=>{if(G.held&&!(hand&&hand.on)){const p=gpos(e);moveHeld(p.x,p.y);}});
+garden.addEventListener("pointerup",e=>{if(G.held&&!hand.on){const p=gpos(e);release(p.x,p.y);}});
+garden.addEventListener("pointercancel",()=>{if(G.held&&!hand.on)release(-1,-1);});
+
+function renderLeaf(){
+  $("#inleaf").innerHTML=G.leaf.size
+    ?"<b style='font-size:14px'>Dalam Hati Beriman:</b>"+[...G.leaf].map(k=>`<span>${ITEMS.find(i=>i.k===k).e} ${NAME[k]}</span>`).join("")
+    :`<span class="muted" style="border:0;background:none">Dalam Hati Beriman: kosong</span>`;
+}
+
+$("#emptyBtn").onclick=()=>{
+  G.leaf.clear();renderLeaf();build();
+  $("#leafbox").classList.remove("glow");
+  $("#arPopup").hidden=true;
+  $("#svgGlow").setAttribute("opacity","0.2");
+};
+$("#startBtn").onclick=()=>{
+  started=true;$("#startBtn").hidden=true;
+  sd("pencetus","Misi 1: Kumpulkan keenam-enam kad Rukun Iman ke dalam Hati Beriman, kemudian tekan Uji Hati Beriman!");
+  toast("Misi 1 dimulakan");renderMissions();
+};
+
+const MIS=[
+  {id:"m1",t:"Kumpulkan keenam-enam Kad Rukun Iman.",h:"Seret atau cubit Kad 1 (Allah) hingga Kad 6 (Qada & Qadar) ke dalam zon Hati Beriman, kemudian tekan <b>Uji Hati Beriman</b>.",ok:r=>r.kadCount===6},
+  {id:"m2",t:"Uji Utusan & Petunjuk Allah (Malaikat, Kitab, Rasul).",h:"Tekan <b>Kosongkan</b>. Masukkan Kad 2 (Malaikat), Kad 3 (Kitab) dan Kad 4 (Rasul) sahaja ke dalam Hati Beriman, kemudian tekan <b>Uji Hati Beriman</b>.",ok:r=>r.hasK2&&r.hasK3&&r.hasK4&&r.kadCount===3},
+  {id:"m3",t:"Buktikan Iman dengan Amalan Harian.",h:"Masukkan kad Rukun Iman bersama amalan <b>Berkata benar</b> dan <b>Hormat & Bantu</b>, kemudian tekan <b>Uji Hati Beriman</b>.",ok:r=>r.hasAmalan&&r.kadCount>=1}
+];
+function renderMissions(){misUI($("#missions"),MIS,S.mis,{started:()=>started,start:()=>{if(!started)$("#startBtn").click();}});}
+renderMissions();
+
+$("#testBtn").onclick=()=>{
+  if(!started){toast("Pilih cara bermula dahulu (butang ✋ atau 📷)");return;}
+  if(!G.leaf.size){toast("Masukkan sekurang-kurangnya satu kad atau amalan ke dalam Hati Beriman");return;}
+
+  const kads=[...G.leaf].filter(k=>k.startsWith("k"));
+  const amals=[...G.leaf].filter(k=>k.startsWith("a"));
+  const r={
+    items:[...G.leaf].map(k=>NAME[k]),
+    kadCount:kads.length,
+    amalCount:amals.length,
+    hasK2:G.leaf.has("k2"),
+    hasK3:G.leaf.has("k3"),
+    hasK4:G.leaf.has("k4"),
+    hasAmalan:amals.length>=1,
+    ok:kads.length>=3||amals.length>=1
+  };
+  S.log.push(r);if(S.log.length>40)S.log.shift();star(1);
+
+  if(r.ok){
+    G.glow=2.5;spawn();$("#leafbox").classList.add("glow");
+    $("#svgGlow").setAttribute("opacity","0.95");
+  } else {
+    $("#leafbox").classList.remove("glow");
+    $("#svgGlow").setAttribute("opacity","0.35");
+  }
+
+  let msg=r.ok
+    ? `Cahaya Hati Beriman bersinar terang! (${r.kadCount} Kad Rukun Iman dan ${amals.length} Amalan Harian digabungkan).`
+    : `Hati Beriman menerima kad ini. Tambah lagi kad Rukun Iman atau amalan harian untuk mengukuhkan cahaya iman!`;
+
+  for(const m of MIS){
+    if(!S.mis[m.id]&&m.ok(r)){
+      S.mis[m.id]=true;star(2);
+      msg=`${sdChip("pujian")}${pr()} Misi selesai: ${m.t}`;
+      break;
+    }
+  }
+  const left=MIS.filter(m=>!S.mis[m.id]).length;
+  $("#fb0").innerHTML=`<div class="fb ${r.ok?"ok":"info"}">${msg}</div>`+(left===0?`<div class="fb info" style="margin-top:8px"><b>Semua misi Alami selesai!</b> Mari renungkan apa yang adik temui. <button class="btn sm" style="--c:var(--ro)" id="toRO">Ke Fasa 2: Renung</button></div>`:"");
+  if(left===0){S.done[0]=true;award("Peneroka Akidah");const b=$("#toRO");if(b)b.onclick=()=>go(1);}
+  const nx=MIS.find(m=>!S.mis[m.id]);
+  $("#g0").textContent=nx?"Misi seterusnya: "+nx.t+" Kosongkan dahulu jika perlu.":"Hebat! Semua misi Alami selesai. Mari bergerak ke fasa Renung.";
+  renderMissions();save();
+};
+
+function spawn(){
+  const L=leafRect();
+  for(let i=0;i<18;i++)G.parts.push({x:L.x+L.w*(0.2+Math.random()*0.6),y:L.y+L.h*(0.2+Math.random()*0.6),vy:-35-Math.random()*45,vx:(Math.random()-.5)*25,r:5+Math.random()*5,life:1.1+Math.random(),k:i%2===0?"star":"heart"});
+}
+
+let last=performance.now();
+function loop(t){
+  const dt=Math.min(.05,(t-last)/1000);last=t;
+  const W=garden.clientWidth,H=garden.clientHeight;
+  if(!W){requestAnimationFrame(loop);return;}
+  fctx.clearRect(0,0,W,H);
+  G.toks.forEach(k=>{
+    if(k===G.held)return;
+    k.x+=k.vx*dt;k.y+=k.vy*dt;k.wob+=dt*2;
+    if(k.x<6){k.x=6;k.vx=Math.abs(k.vx);}
+    if(k.x+k.w>W-6){k.x=W-6-k.w;k.vx=-Math.abs(k.vx);}
+    if(k.y<6){k.y=6;k.vy=Math.abs(k.vy);}
+    if(k.y+k.h>H*0.76){k.y=H*0.76-k.h;k.vy=-Math.abs(k.vy);}
+    if(Math.hypot(k.vx,k.vy)<14){k.vx+=(Math.random()-.5)*12;k.vy+=(Math.random()-.5)*12;}
+  });
+  G.toks.forEach(k=>{
+    const rot=k===G.held?0:Math.sin(k.wob)*0.05;
+    k.el.style.transform=`translate(${k.x}px,${k.y}px) rotate(${rot}rad)${k===G.held?" scale(1.08)":""}`;
+  });
+  G.parts=G.parts.filter(p=>(p.life-=dt*0.5)>0);
+  G.parts.forEach(p=>{
+    p.x+=p.vx*dt;p.y+=p.vy*dt;fctx.globalAlpha=Math.min(1,p.life);
+    fctx.font="20px serif";fctx.textAlign="center";
+    fctx.fillText(p.k==="star"?"✨":"💛",p.x,p.y);
+  });
+  fctx.globalAlpha=1;
+
+  if(hand.on&&hand.pts){
+    hand.draw(fctx,t);
+    if(G.held&&hand.x!=null){
+      fctx.save();fctx.strokeStyle="#F59E0B";fctx.lineWidth=2.5;fctx.setLineDash([8,6]);
+      fctx.beginPath();fctx.moveTo(hand.x,hand.y);fctx.lineTo(G.held.x+G.held.w/2,G.held.y+G.held.h/2);fctx.stroke();fctx.restore();
+    }
+  }
+  if(!started){
+    fctx.fillStyle="rgba(27,36,48,.52)";fctx.fillRect(0,0,W,H);
+    fctx.fillStyle="#fff";fctx.font="800 20px 'Bricolage Grotesque',sans-serif";fctx.textAlign="center";
+    fctx.fillText("Pilih cara bermula di atas (✋ atau 📷)",W/2,H/2);
+  }
+  trackHand();requestAnimationFrame(loop);
+}
+
+/* ===== Modul tangan AI (MediaPipe Hands): kamera, 21 titik sendi, cubit ===== */
+const HAND_LINKS=[[0,1],[1,2],[2,3],[3,4],[0,5],[5,6],[6,7],[7,8],[5,9],[9,10],[10,11],[11,12],[9,13],[13,14],[14,15],[15,16],[13,17],[17,18],[18,19],[19,20],[0,17]];
+function makeHand(box,video){
+  const H={on:false,pts:null,x:null,y:null,pinch:false,was:false,hl:null,lastT:-1};
+  H.start=async(stat)=>{
+    if(!window.isSecureContext||!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia)throw new Error("kamera memerlukan pautan https dan pelayar yang menyokong kamera");
+    stat("Membuka kamera…");
+    const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:"user",width:640,height:480},audio:false});
+    video.srcObject=stream;video.hidden=false;await video.play();
+    stat("Memuatkan AI pengesan tangan…");
+    const vision=await import("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14");
+    const fs=await vision.FilesetResolver.forVisionTasks("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm");
+    H.hl=await vision.HandLandmarker.createFromOptions(fs,{baseOptions:{modelAssetPath:"https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",delegate:"GPU"},runningMode:"VIDEO",numHands:1});
+    H.on=true;
+  };
+  H.stop=()=>{H.on=false;H.pts=null;H.x=null;H.pinch=false;try{const s=video.srcObject;if(s)s.getTracks().forEach(t=>t.stop());}catch(e){}video.srcObject=null;video.hidden=true;try{if(H.hl)H.hl.close();}catch(e){}H.hl=null;};
+  H.update=(thr)=>{H.was=H.pinch;
+    if(!H.on||!H.hl||video.readyState<2||video.currentTime===H.lastT)return false;H.lastT=video.currentTime;
+    const res=H.hl.detectForVideo(video,performance.now());
+    if(!res.landmarks||!res.landmarks.length){H.pts=null;H.x=null;H.pinch=false;return true;}
+    const W=box.clientWidth,Hh=box.clientHeight,vw=video.videoWidth||640,vh=video.videoHeight||480,sc=Math.max(W/vw,Hh/vh),ox=(W-vw*sc)/2,oy=(Hh-vh*sc)/2;
+    H.pts=res.landmarks[0].map(p=>({x:W-(p.x*vw*sc+ox),y:p.y*vh*sc+oy}));
+    const a=H.pts[4],b=H.pts[8],w=H.pts[0];H.x=(a.x+b.x)/2;H.y=(a.y+b.y)/2;
+    const span=Math.hypot(w.x-H.pts[9].x,w.y-H.pts[9].y)||1;
+    const tips=[8,12,16,20].map(k=>Math.hypot(H.pts[k].x-w.x,H.pts[k].y-w.y)).reduce((s,v)=>s+v,0)/4;
+    H.pinch=Math.hypot(a.x-b.x,a.y-b.y)<(thr||45)||tips<span*1.05;return true;};
+  H.draw=(ctx,t)=>{if(!H.on||!H.pts)return;const col=H.pinch?"#F59E0B":"#06B6D4";ctx.save();
+    ctx.strokeStyle=col;ctx.lineWidth=3;ctx.shadowColor=col;ctx.shadowBlur=8;
+    HAND_LINKS.forEach(([i,j])=>{ctx.beginPath();ctx.moveTo(H.pts[i].x,H.pts[i].y);ctx.lineTo(H.pts[j].x,H.pts[j].y);ctx.stroke();});
+    ctx.fillStyle="#fff";H.pts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,3.5,0,Math.PI*2);ctx.fill();});ctx.shadowBlur=0;
+    const r=H.pinch?13+Math.sin((t||0)/120)*3:22;ctx.lineWidth=3;ctx.beginPath();ctx.arc(H.x,H.y,r,0,Math.PI*2);ctx.stroke();
+    if(H.pinch){ctx.fillStyle="rgba(245,158,11,.25)";ctx.fill();}
+    ctx.font="700 12px 'Atkinson Hyperlegible',sans-serif";ctx.textAlign="center";ctx.fillStyle=col;ctx.fillText(H.pinch?"✊ MEMEGANG":"🖐️ SEDIA",H.x,H.y-r-8);ctx.restore();};
+  return H;
+}
+const hand=makeHand(garden,$("#vid"));
+function trackHand(){
+  if(!hand.update(45))return;
+  if(hand.x==null){if(G.held)release(-1,-1);return;}
+  if(hand.pinch&&!hand.was&&started){
+    let best=null,bd=1e9;
+    G.toks.forEach(k=>{const d=Math.hypot(k.x+k.w/2-hand.x,k.y+k.h/2-hand.y);if(d<bd&&d<95){bd=d;best=k;}});
+    if(best)grab(best,hand.x,hand.y);
+  }
+  if(hand.pinch&&G.held)moveHeld(hand.x,hand.y);
+  if(!hand.pinch&&hand.was&&G.held)release(hand.x,hand.y);
+}
+$("#camBtn").onclick=async()=>{
+  const st=$("#camStat");
+  try{
+    await hand.start(t=>st.textContent=t);
+    if(!started)$("#startBtn").click();
+    st.textContent="Gerak tangan aktif: rangka tangan 21 titik kelihatan. Cubit kad untuk memegang, bawa ke Hati Beriman, buka jari untuk mengimbas.";
+  } catch(e){
+    st.textContent="Kamera tidak dapat digunakan ("+(e&&e.message?e.message:e)+"). Guna sentuhan atau tetikus.";
+    hand.on=false;
+  }
+};
+(function(){
+  const cb=$("#camBtn");if(!cb)return;
+  const orig=cb.onclick,lab=cb.innerHTML;
+  const off=()=>{hand.stop();cb.innerHTML=lab;};
+  cb.onclick=async(e)=>{
+    if(hand.on){off();const st=$("#camStat");if(st)st.textContent="Kamera ditutup. Teruskan dengan jari atau tetikus.";return;}
+    await orig(e);if(hand.on)cb.innerHTML="⏹ Tutup kamera";
+  };
+  window.__handOff=()=>{if(hand.on)off();};
+})();
+
+/* ================= FASA 2: RENUNG (MENGGUNAKAN DATA MURID SENDIRI SEJAK PERCUBAAN PERTAMA) ================= */
+function sampleLog(){
+  if(S.log.length>=1)return S.log;
+  return [
+    {items:["Kad 1: Allah","Kad 2: Malaikat","Kad 3: Kitab","Kad 4: Rasul","Kad 5: Hari Akhirat","Kad 6: Qada & Qadar"],kadCount:6,amalCount:0,ok:true},
+    {items:["Kad 1: Allah","Berkata benar","Hormat & Bantu"],kadCount:1,amalCount:2,ok:true}
+  ];
+}
+
+function renderRO(){
+  const d=sampleLog(),own=S.log.length>=1;
+  $("#logBody").innerHTML=d.map((r,i)=>`<tr><td>${i+1}</td><td>${r.items.join(", ")}</td><td>${r.kadCount} kad</td><td><b>${r.ok?"Hati Beriman Bercahaya ✨":"Perlu tambah kad/amalan"}</b></td></tr>`).join("")+(own?"":`<tr><td colspan="4" class="muted">Contoh data. Kembali ke Fasa 1 Alami untuk merekod data adik sendiri.</td></tr>`);
+
+  const qs=[
+    {
+      q:"Renung 1/3: Apa yang berubah apabila seseorang mempunyai akidah (kepercayaan yang teguh) dalam hatinya?",
+      o:["Kata-kata baik, perbuatan baik, bersyukur dan mentaati perintah Allah","Hanya berdiam diri tanpa perlu berbuat baik","Tidak perlu berusaha dalam kehidupan"],
+      a:0,
+      why:"Akidah yang teguh dalam hati dibuktikan melalui kata-kata baik, perbuatan baik, bersyukur dan mentaati perintah Allah SWT."
+    },
+    {
+      q:"Renung 2/3: Apa yang berubah pada sikap kita apabila kita beriman kepada Hari Akhirat?",
+      o:["Kita lupa tentang amalan harian","Kita sedar akan dibangkitkan dan dihisab, lalu berbuat baik dan menjaga amalan harian","Kita tidak perlu membantu orang lain"],
+      a:1,
+      why:"Beriman kepada Hari Akhirat menyedarkan kita bahawa kita akan dibangkitkan dan dihisab segala amalan, maka kita sentiasa berbuat baik."
+    },
+    {
+      q:"Renung 3/3: Apa yang berubah dalam tindakan kita apabila kita memahami konsep Qada dan Qadar?",
+      o:["Kita berhenti berusaha kerana semuanya telah ditetapkan","Kita tidak perlu berdoa lagi","Kita tetap berusaha dan berdoa sambil percaya Allah mengetahui dan menetapkan segala sesuatu"],
+      a:2,
+      why:"Walaupun Allah SWT mengetahui dan menetapkan segala sesuatu, kita wajib tetap berusaha dan berdoa."
+    }
+  ];
+  let i=0;
+  const show=()=>{
+    const q=qs[i];
+    $("#roQ").innerHTML=`<h3>${q.q}</h3><div class="opts">${q.o.map((o,k)=>`<button class="opt" data-k="${k}">${o}</button>`).join("")}</div><div id="roFb"></div>`;
+    $$("#roQ .opt").forEach(b=>b.onclick=()=>{
+      if($("#roQ .right"))return;
+      const ok=+b.dataset.k===q.a;
+      b.classList.add(ok?"right":"wrong");
+      if(!ok)$$("#roQ .opt")[q.a].classList.add("right");
+      if(ok){star(1);sd("pujian",`${pr()} ${q.why}`);}
+      else{sd("cadangan",`Belum tepat. ${q.why}`);}
+      $("#roFb").innerHTML=`<div class="fb ${ok?"ok":"bad"}">${ok?pr():"Semak semula:"} ${q.why}</div>`+(i<2?`<div class="row" style="margin-top:8px"><button class="btn sm" id="roNext">Soalan refleksi seterusnya</button></div>`:`<div class="fb info" style="margin-top:8px">Syabas! Lengkapkan juga jawapan bertulis/suara di bawah sebelum ke Fasa 3: Faham.</div>`);
+      const n=$("#roNext");if(n)n.onclick=()=>{i++;show();};
+      if(i===2)S.done[1]=true;
+      save();
+    });
+  };
+  show();
+}
+
+window.addKw=function(targetId,kw){
+  const ta=document.getElementById(targetId);
+  if(!ta)return;
+  const cur=ta.value.trim();
+  if(cur.toLowerCase().includes(kw.toLowerCase()))return;
+  ta.value=cur?`${cur}, ${kw}`:`Kita hendaklah ${kw}`;
+  ta.dispatchEvent(new Event("input"));
+};
+
+function mic(btn,ta,stat,cb){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  btn.onclick=()=>{
+    if(!SR){stat.textContent="Pelayar ini tidak menyokong suara ke teks. Guna Chrome atau Edge, atau taip sahaja.";return;}
+    try{
+      const r=new SR();r.lang="ms-MY";r.interimResults=true;
+      const base=ta.value?ta.value+" ":"";
+      btn.classList.add("on");stat.textContent="Mendengar… bercakap sekarang.";
+      r.onresult=e=>{let t="";for(const res of e.results)t+=res[0].transcript;ta.value=base+t;ta.dispatchEvent(new Event("input"));};
+      r.onerror=e=>{stat.textContent=e.error==="not-allowed"?"Mikrofon tidak dibenarkan.":"Tidak dapat mendengar ("+e.error+"). Cuba lagi atau taip.";};
+      r.onend=()=>{btn.classList.remove("on");if(stat.textContent.startsWith("Mendengar"))stat.textContent="Selesai. Jawapan adik sedang disemak.";if(cb)cb();};
+      r.start();
+    }catch(e){stat.textContent="Suara ke teks tidak dapat dimulakan di sini. Taip sahaja.";}
+  };
+}
+
+mic($("#roMic"),$("#roText"),$("#roMicStat"),()=>$("#roCheck").click());
+const RO_K=[
+  ["tetap berusaha",/usaha|berusaha|ikhtiar/],
+  ["berdoa",/doa|berdoa/],
+  ["percaya ketetapan Allah",/allah|ketetapan|menetapkan|mengetahui|takdir/]
+];
+$("#roCheck").onclick=()=>{
+  const n=sdCheck($("#roText").value,RO_K,$("#roTxtFb"));
+  if(n>=2&&!S.roStar){S.roStar=true;star(1);S.done[1]=true;save();}
+};
+$("#roText").value=S.roText||"";$("#roText").oninput=()=>{S.roText=$("#roText").value;save();};
+
+/* ================= FASA 3: FAHAM (PEMADANAN PERCUBAAN + BANK 9 SOALAN JAKIM TAHUN 1) ================= */
+let mapSel=0;
+function eqnFormula(r){
+  const hasRukun=r&&r.kadCount>0;
+  const hasAmal=r&&(r.amalCount>0||r.items.some(x=>x.includes("Berkata")||x.includes("Hormat")));
+  return `<span class="t ${hasRukun?"have":""}">❤️ Percaya Rukun Iman (${r?r.kadCount:6}/6)</span><span>+</span><span class="t ${hasAmal?"have":""}">🤲 Kata & Perbuatan Baik</span><span>=</span><span class="t ${r&&r.ok?"have":""}">🌟 Akidah Teguh & Iman Sempurna</span>`;
+}
+
+function renderAC(){
+  const d=sampleLog();
+  if(mapSel>=d.length)mapSel=0;
+  $("#mapPick").innerHTML=d.map((r,i)=>`<button class="opt" data-i="${i}" ${i===mapSel?'style="border-color:var(--ac);background:var(--ac-soft)"':""}>Percubaan ${i+1}</button>`).join("");
+  $$("#mapPick .opt").forEach(b=>b.onclick=()=>{mapSel=+b.dataset.i;renderAC();});
+  const r=d[mapSel];
+  $("#eqn").innerHTML=eqnFormula(r);
+  $("#mapNote").innerHTML=`Dalam <b>Percubaan ${mapSel+1}</b>, adik memasukkan: <b>${r.items.join(", ")}</b>. Ini membuktikan gabungan kepercayaan dalam hati (${r.kadCount} Rukun Iman) dan amalan baik membentuk Akidah yang teguh.`;
+  $("#acText").value=S.acText||"";
+  AQ.start();
+}
+$("#acText").oninput=()=>{S.acText=$("#acText").value;save();};
+mic($("#acMic"),$("#acText"),$("#acMicStat"),()=>$("#acCheck").click());
+const AC_K=[
+  ["percaya dalam hati",/hati|percaya|teguh|yakin/],
+  ["kata-kata baik",/kata|berkata|benar|percakapan/],
+  ["perbuatan baik",/perbuatan|amalan|baik|hormat|bantu|kebersihan|soleh/]
+];
+$("#acCheck").onclick=()=>{
+  const n=sdCheck($("#acText").value,AC_K,$("#acFb"));
+  if(n>=2&&!S.acStar){S.acStar=true;star(2);save();}
+};
+
+// Semakan Sebutan Istilah Sasaran
+const TERMS=["Rukun Iman","Malaikat","Al-Quran","Nabi Muhammad","Hari Akhirat","Qada dan Qadar"];
+let termIdx=0;
+$("#pronNext").onclick=()=>{
+  termIdx=(termIdx+1)%TERMS.length;
+  $("#targetWord").textContent=TERMS[termIdx];
+  $("#pronInput").value="";
+  $("#pronFb").innerHTML="";
+};
+mic($("#pronMic"),$("#pronInput"),$("#pronFb"),()=>$("#pronCheck").click());
+$("#pronCheck").onclick=()=>{
+  const target=TERMS[termIdx].toLowerCase().replace(/[^a-z0-9\s]/g,"");
+  const said=($("#pronInput").value||"").toLowerCase().replace(/[^a-z0-9\s]/g,"").trim();
+  if(!said){$("#pronFb").innerHTML='<div class="fb info">Tekan 🎤 Sebut atau taip istilah sasaran dahulu.</div>';return;}
+  if(said===target||said.includes(target)){
+    $("#pronFb").innerHTML=`<div class="fb ok">${pr()} Sebutan tepat: <b>"${TERMS[termIdx]}"</b>!</div>`;
+    sd("pujian",`Sebutan adik sangat tepat: ${TERMS[termIdx]}!`);
+    star(1);
+  } else {
+    $("#pronFb").innerHTML=`<div class="fb bad">Belum tepat. Adik menyebut <b>"${$("#pronInput").value}"</b>, manakala istilah sasaran ialah <b>"${TERMS[termIdx]}"</b>. Cuba sebut sekali lagi!</div>`;
+    sd("cadangan",`Cuba sebut semula dengan jelas: ${TERMS[termIdx]}.`);
+  }
+};
+
+/* Bank soalan: 3 Mudah (lvl 1), 3 Sederhana (lvl 2), 3 Sukar (lvl 3) mengikut Sukatan JAKIM Tahun 1 */
+const QB=[
+  {id:"s1",lvl:1,c:"akidah",t:"Apakah maksud akidah mengikut pelajaran Akidah Tahun 1?",a:"Kepercayaan dan keyakinan yang teguh dalam hati",o:["Kepercayaan dan keyakinan yang teguh dalam hati","Perbuatan yang dilakukan secara terpaksa","Sekadar membaca buku agama","Amalan yang dilakukan sebulan sekali"],h:"Lihat bahagian 'Apa Itu Akidah?' – ia berkaitan dengan keyakinan hati."},
+  {id:"s2",lvl:1,c:"rukun",t:"Berapakah jumlah perkara dalam Rukun Iman yang wajib dipercayai?",a:"Enam perkara",o:["Enam perkara","Empat perkara","Lima perkara","Tujuh perkara"],h:"Kira bilangan nombor Rukun Iman (dari Allah hingga Qada & Qadar)."},
+  {id:"s3",lvl:1,c:"utusan",t:"Siapakah rasul terakhir bagi umat Islam?",a:"Nabi Muhammad SAW",o:["Nabi Muhammad SAW","Malaikat Jibril","Manusia biasa","Pencipta makhluk"],h:"Rujuk bahagian 'Malaikat, Kitab dan Rasul'."},
+  {id:"s4",lvl:2,c:"akidah",t:"Bagaimanakah cara kita membuktikan keimanan dalam hati?",a:"Melalui kata-kata dan perbuatan baik",o:["Melalui kata-kata dan perbuatan baik","Menyimpan kepercayaan dalam hati sahaja","Membandingkan amalan dengan rakan","Menunggu hari akhirat tiba"],h:"Iman bukan sekadar di hati, tetapi dizahirkan melalui tingkah laku yang baik."},
+  {id:"s5",lvl:2,c:"utusan",t:"Apakah perbezaan antara Malaikat dan Rasul?",a:"Malaikat ialah makhluk Allah yang taat, manakala Rasul ialah manusia pilihan yang menyampaikan ajaran Allah",o:["Malaikat ialah makhluk Allah yang taat, manakala Rasul ialah manusia pilihan yang menyampaikan ajaran Allah","Malaikat ialah manusia pilihan, manakala Rasul ialah kitab suci","Kedua-duanya ialah wahyu Allah","Malaikat ialah rasul terakhir"],h:"Bandingkan definisi Malaikat (makhluk yang taat) dan Rasul (manusia pilihan Allah)."},
+  {id:"s6",lvl:2,c:"allah",t:"Mengapakah kita wajib menyembah Allah SWT sahaja?",a:"Kerana Allah Tuhan Yang Maha Esa dan mencipta kita",o:["Kerana Allah Tuhan Yang Maha Esa dan mencipta kita","Kerana Allah mempunyai sekutu","Kerana diminta oleh ibu bapa","Kerana kita sudah tahu semua perkara"],h:"Ingat siapa yang mencipta segala makhluk di alam ini."},
+  {id:"s7",lvl:3,c:"utusan",t:"Mengapakah Al-Quran diturunkan sebagai kitab suci umat Islam?",a:"Sebagai wahyu dan petunjuk Allah kepada manusia",o:["Sebagai wahyu dan petunjuk Allah kepada manusia","Sebagai pengganti kepada Rukun Iman","Sebagai catatan sejarah malaikat","Sebagai tanda berakhirnya hari akhirat"],h:"Lihat maksud 'Kitab' – wahyu yang menjadi panduan hidup umat Islam."},
+  {id:"s8",lvl:3,c:"akhirat",t:"Apakah yang akan berlaku kepada manusia pada Hari Akhirat?",a:"Kita akan dibangkitkan dan dihisab",o:["Kita akan dibangkitkan dan dihisab","Kita akan mencipta makhluk baharu","Kita tidak perlu lagi berbuat baik","Kita akan kembali menjadi bayi"],h:"Rujuk bahagian 'Hari akhirat' – setiap amalan baik dan buruk akan dihitung."},
+  {id:"s9",lvl:3,c:"qada",t:"Ali ingin berjaya dalam ujian. Bagaimanakah Ali mengamalkan konsep beriman kepada Qada dan Qadar?",a:"Percaya ketetapan Allah sambil tetap berusaha dan berdoa",o:["Percaya ketetapan Allah sambil tetap berusaha dan berdoa","Tidur sahaja kerana Allah sudah menetapkan keputusan","Berusaha tanpa perlu berdoa kepada Allah","Berdoa sahaja tanpa mengulang kaji pelajaran"],h:"Gabungkan keyakinan kepada ketetapan Allah dengan dua tindakan manusia (usaha dan doa)."}
+];
+
+const AQ=adaptiveQuiz({
+  total:9,
+  gen:bankGen(QB),
+  badge:"Permata Akidah",
+  remedial:{
+    akidah:{t:"Konsep Akidah Teguh",d:"Padankan dalam ingatan: <b>Hati</b> (percaya dalam hati) + <b>Mulut</b> (kata-kata baik) + <b>Tangan</b> (perbuatan baik) = <b>Iman Sempurna</b>.",b:"Ulang Misi 3 di Alami",go:()=>go(0)},
+    rukun:{t:"Susunan 6 Rukun Iman",d:"Susunan 6 Rukun Iman yang wajib dipercaya: <b>1. Allah → 2. Malaikat → 3. Kitab → 4. Rasul → 5. Hari Akhirat → 6. Qada dan Qadar</b>.",b:"Ulang Misi 1 di Alami",go:()=>go(0)},
+    utusan:{t:"Malaikat, Kitab dan Rasul",d:"<b>Malaikat</b>: makhluk Allah yang taat. <b>Kitab</b>: wahyu dan petunjuk Allah (Al-Quran). <b>Rasul</b>: manusia pilihan yang menyampaikan ajaran Allah (Nabi Muhammad SAW rasul terakhir).",b:"Ulang Misi 2 di Alami",go:()=>go(0)},
+    allah:{t:"Beriman kepada Allah SWT",d:"Allah SWT ialah <b>Tuhan Yang Maha Esa</b> dan <b>Pencipta segala makhluk</b>, tiada sekutu bagi-Nya, Maha Berkuasa dan Maha Mengetahui.",b:"Ulang di Alami",go:()=>go(0)},
+    akhirat:{t:"Beriman kepada Hari Akhirat",d:"Pada <b>Hari Akhirat</b>, kita akan <b>dibangkitkan dan dihisab</b> atas segala amalan harian kita.",b:"Lihat Refleksi Renung",go:()=>go(1)},
+    qada:{t:"Konsep Qada dan Qadar",d:"Ingat prinsip ini: <b>'Allah mengetahui dan menetapkan segala sesuatu, dan kita wajib tetap berusaha dan berdoa'</b>.",b:"Cuba Situasi 2 di Cuba",go:()=>{go(3);pickC(CH[1]);}}
+  }
+});
+
+/* ================= FASA 4: CUBA (3 SITUASI BAHARU) ================= */
+const CH=[
+  {
+    id:"c1",lvl:1,
+    t:"Situasi 1: Berkata Benar di Sekolah",
+    i:"🏺",
+    d:"Ahmad terpecahkan pasu bunga di sekolah dan tiada sesiapa yang melihatnya.",
+    q1:"Jika Ahmad beriman kepada Allah yang Maha Mengetahui dan Hari Akhirat (dihisab), apakah tindakan Ahmad?",
+    o1:["Mengaku dengan jujur kepada guru walaupun tiada sesiapa melihat","Berdiam diri kerana tiada orang nampak","Menyalahkan rakan lain"],
+    a1:"Mengaku dengan jujur kepada guru walaupun tiada sesiapa melihat",
+    q2:"Apakah amalan harian yang dibuktikan oleh Ahmad?",
+    o2:["Berkata benar","Menjaga kebersihan","Berdoa sahaja"],
+    a2:"Berkata benar",
+    h:"Ingat sifat Allah Maha Mengetahui dan amalan harian 'berkata benar'.",
+    why:"Ahmad mengaku jujur kepada guru dan buku Amalan Harian menandakan ✅ pada 'berkata benar' kerana dia sedar Allah Maha Mengetahui dan akan dihisab pada Hari Akhirat."
+  },
+  {
+    id:"c2",lvl:2,
+    t:"Situasi 2: Qada & Qadar dalam Perlumbaan",
+    i:"🎤",
+    d:"Sara menyertai pertandingan bercerita tetapi berasa gementar kerana peserta lain sangat hebat.",
+    q1:"Berdasarkan konsep beriman kepada Qada dan Qadar, apakah tindakan terbaik Sara?",
+    o1:["Berlatih (berusaha) dan berdoa sambil percaya ketetapan Allah","Menarik diri awal kerana keputusan sudah ditetapkan","Berusaha tanpa perlu berdoa"],
+    a1:"Berlatih (berusaha) dan berdoa sambil percaya ketetapan Allah",
+    q2:"Apakah dua tindakan manusia dalam rumus Qada dan Qadar?",
+    o2:["Berusaha dan berdoa","Menunggu dan berdiam diri","Mengeluh dan berputus asa"],
+    a2:"Berusaha dan berdoa",
+    h:"Gunakan rumus Qada & Qadar: Ketentuan Allah + Usaha + Doa.",
+    why:"Sara menggabungkan tindakan Berlatih (Berusaha) dan Berdoa. Hati Sara menjadi tenang kerana Allah mengetahui dan menetapkan segala sesuatu, dan kita tetap berusaha serta berdoa."
+  },
+  {
+    id:"c3",lvl:3,
+    t:"Situasi 3: Amalan Harian di Rumah",
+    i:"🏡",
+    d:"Ibu meminta tolong mengemas ruang tamu ketika adik sedang bermain alat permainan.",
+    q1:"Bagaimanakah keimanan membentuk akhlak dalam situasi ini?",
+    o1:["Menghormati ibu bapa dengan membantu dan menjaga kebersihan ruang tamu","Membiarkan ibu mengemas seorang diri","Memarahi adik dan meninggalkan mainan bersepah"],
+    a1:"Menghormati ibu bapa dengan membantu dan menjaga kebersihan ruang tamu",
+    q2:"Apakah tiga amalan harian yang dipraktikkan dalam situasi ini?",
+    o2:["Menghormati ibu bapa, membantu dan menjaga kebersihan","Berkata benar sahaja","Tidur awal setiap malam"],
+    a2:"Menghormati ibu bapa, membantu dan menjaga kebersihan",
+    h:"Lihat senarai Amalan Harian: menghormati ibu bapa, membantu dan menjaga kebersihan.",
+    why:"Dengan menghormati ibu bapa, membantu adik dan menjaga kebersihan, meter 'Iman Membentuk Akhlak' penuh (percaya, bersyukur dan berbuat baik)."
+  }
+];
+
+const A={cur:null,t0:0,fails:0};
+function recC(){
+  const L=aiaState().lvl,left=CH.filter(c=>!S.chal[c.id]);
+  return left.sort((a,b)=>Math.abs(a.lvl-L)-Math.abs(b.lvl-L)||CH.indexOf(a)-CH.indexOf(b))[0]||null;
+}
+function renderAE(){
+  $("#chalList").innerHTML=CH.map(c=>`<button data-id="${c.id}" class="${S.chal[c.id]?"done":""}" aria-pressed="${A.cur&&A.cur.id===c.id}"><b>${c.i} ${c.t}</b><small>Aras ${c.lvl}${recC()&&recC().id===c.id?" · 🧠 Disyorkan AI":""}</small></button>`).join("");
+  $$("#chalList button").forEach(b=>b.onclick=()=>pickC(CH.find(c=>c.id===b.dataset.id)));
+  if(!A.cur)pickC(recC()||CH[0]);
+  aiaUI();evidence();
+}
+function pickC(c){
+  A.cur=c;A.t0=Date.now();A.fails=0;
+  $$("#chalList button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.id===c.id));
+  $("#cTitle").textContent=c.t;$("#cIcon").textContent=c.i;$("#cDesc").textContent=c.d;$("#cFb").innerHTML="";
+  const sel=(id,l,o)=>`<label style="display:flex;flex-direction:column;gap:4px;font-weight:700;font-size:14.5px">${l}<select id="${id}"><option value="">-- Pilih ramalan adik --</option>${o.map(x=>`<option>${x}</option>`).join("")}</select></label>`;
+  $("#cAsk").innerHTML=sel("pA",c.q1,c.o1)+sel("pB",c.q2,c.o2);
+}
+$("#cTest").onclick=()=>{
+  const c=A.cur,a=$("#pA").value,b=$("#pB").value;
+  if(!a||!b){$("#cFb").innerHTML=`<div class="fb info">Pilih kedua-dua ramalan dahulu sebelum menguji!</div>`;return;}
+  const ok=(a===c.a1)&&(b===c.a2);
+  S.preds.push(ok?1:0);
+  const first=!S.chal[c.id];
+  if(ok&&first){
+    S.chal[c.id]=true;star(3);
+    aiaRecord({ok:A.fails===0,wrong:A.fails>0,hints:A.fails,secs:(Date.now()-A.t0)/1000,exp:60,concept:"aplikasi"});
+  }
+  if(!ok)A.fails++;
+  const tier=aiaState().tier;
+  const all=CH.every(x=>S.chal[x.id]);
+  if(all){S.done[3]=true;award("Duta Akhlak Mulia");}
+  save();
+
+  $("#cFb").innerHTML=`<div class="fb ${ok?"ok":"info"}">${ok?pr()+" Ramalan tepat! "+c.why:"Ramalan belum tepat. Ubah ramalan adik dan uji semula."}</div>`
+    +(ok?(all?`<div class="fb ok" style="margin-top:8px"><b>🏅 Tahniah! Lencana Duta Akhlak Mulia!</b> Semua 3 situasi baharu telah berjaya adik selesaikan.</div>`
+    :`<div class="row" style="margin-top:8px"><button class="btn sm" id="cNext">Situasi seterusnya</button></div>`)
+    :`<div class="fb info" style="margin-top:8px"><span class="sd sd-ai">AI Adaptif</span> ${tier==="novis"?"Petunjuk khas: "+c.h:tier==="mahir"&&A.fails===1?"Semak semula pilihan adik berdasarkan konsep akidah yang dipelajari.":"Petunjuk: "+c.h}</div>`);
+
+  if(ok){if(!all)sd("pujian","Ramalan adik tepat! Adik berjaya mengaplikasikan ilmu akidah dalam situasi baharu.");}
+  else sd("cadangan","Belum tepat. Baca petunjuk, ubah ramalan, kemudian uji semula.");
+
+  const n=$("#cNext");
+  if(n){const rc=recC();n.textContent=rc?`Situasi seterusnya (disyorkan AI): ${rc.t}`:"Situasi seterusnya";n.onclick=()=>pickC(recC()||CH[0]);}
+  renderAE();evidence();
+};
+function evidence(){
+  $("#evDone").textContent=CH.filter(c=>S.chal[c.id]).length+"/3";
+  const p=S.preds;$("#evAcc").textContent=p.length?Math.round(p.reduce((a,b)=>a+b,0)/p.length*100)+"%":"–";
+  $("#evQuiz").textContent=S.quiz.n?S.quiz.ok+"/"+S.quiz.n:"–";
+  $("#evTrials").textContent=S.log.length;
+}
+
+/* Sokongan Dialog: peringatan lembut apabila murid berhenti 25 saat */
+sdIdle(()=>{
+  if(S.phase===0){
+    if(!started)return "Tekan salah satu butang Mula (✋ atau 📷) untuk memulakan misi.";
+    const nx=MIS.find(m=>!S.mis[m.id]);
+    return nx?"Masih di situ? Cuba misi ini: "+nx.t+" Seret kad ke Hati Beriman, kemudian tekan Uji Hati Beriman.":null;
+  }
+  if(S.phase===1)return "Jangan lupa jawab soalan Renung dan tekan Semak refleksi.";
+  if(S.phase===2)return "Cuba jawab kuiz AI Adaptif atau semak penerangan adik dengan butang Semak.";
+  const c=CH.find(x=>!S.chal[x.id]);
+  return c?"Satu lagi situasi baharu menunggu adik: "+c.t+".":null;
+});
+
+layout();build();renderLeaf();requestAnimationFrame(loop);go(S.phase||0);
+})();
+</script>
+
+<script>
+(function(){const R=document.getElementById('resetAll');let armT=null;
+  window.resetApp=function(){if(!R)return;if(!R.classList.contains('warn')){R.classList.add('warn');R.textContent='Tekan lagi untuk padam semua';clearTimeout(armT);armT=setTimeout(()=>{R.classList.remove('warn');R.textContent='🔄 Mula semula';},4000);R.scrollIntoView({block:'nearest'});return;}
+    try{localStorage.removeItem(R.dataset.key);}catch(e){}location.reload();};
+  if(R)R.addEventListener('click',window.resetApp);})();
+(function(){const N=["Alami","Renung","Faham","Cuba"];
+  const ph=n=>document.querySelector('.phb[data-p="'+n+'"]');
+  document.querySelectorAll('.panel[data-p]').forEach(p=>{const i=+p.dataset.p;const d=document.createElement('div');d.className='pnav';
+    d.innerHTML=(i>0?'<button class="btn ghost" data-nav="'+(i-1)+'">← '+(i)+' '+N[i-1]+'</button>':'<span></span>')+'<span class="sp"></span>'+
+      (i<3?'<button class="btn" data-nav="'+(i+1)+'">'+(i+2)+' '+N[i+1]+' →</button>':'<button class="btn" onclick="window.scrollTo({top:0,behavior:\'smooth\'})">🏆 Selesai Kembara</button>');
+    p.appendChild(d);});
+  document.querySelectorAll('[data-nav]').forEach(b=>{const pan=b.closest('.panel'),n=+b.dataset.nav,old=pan&&n>+pan.dataset.p?pan.querySelector('[data-go="'+n+'"]'):null;
+    if(old&&old.parentElement&&old.parentElement.classList.contains('row')&&old.parentElement.children.length===1)old.parentElement.hidden=true;
+    b.addEventListener('click',()=>{if(old)old.click();else{const t=ph(n);if(t)t.click();}});});
+})();
+</script>
+
+<footer class="credit" role="contentinfo">
+  <div class="logos"><img src="logo-ukm.png" alt="Universiti Kebangsaan Malaysia" onerror="this.remove()"><img src="logo-ftsm.png" alt="Fakulti Teknologi dan Sains Maklumat" onerror="this.remove()"></div>
+  <p><b>Didik<span class="bAR">AR</span>ealiti <span class="bAI">AI</span></b>: Simulator AR dan AI menerusi kitaran pembelajaran berasaskan pengalaman</p>
+  <p>Berdasarkan template DidikARealiti AI © 2026 FTSM, Universiti Kebangsaan Malaysia (CC BY-NC-SA 4.0)</p>
+  <p>Diadaptasi oleh [nama guru, sekolah]</p>
+  <p class="lic">Boleh dikongsi dan diadaptasi untuk pendidikan dengan mengekalkan kredit ini · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ms" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></p>
+</footer>
+</body>
+</html>
